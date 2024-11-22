@@ -1,0 +1,3 @@
+[console_scripts]
+gh_tcp_node = gh_tcp.gh_tcp_node:main
+

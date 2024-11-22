@@ -1,0 +1,9 @@
+source;share/gh_tcp/hook/pythonpath.ps1
+source;share/gh_tcp/hook/pythonpath.dsv
+source;share/gh_tcp/hook/pythonpath.sh
+source;share/gh_tcp/hook/ament_prefix_path.ps1
+source;share/gh_tcp/hook/ament_prefix_path.dsv
+source;share/gh_tcp/hook/ament_prefix_path.sh
+source;../../build/gh_tcp/share/gh_tcp/hook/pythonpath_develop.ps1
+source;../../build/gh_tcp/share/gh_tcp/hook/pythonpath_develop.dsv
+source;../../build/gh_tcp/share/gh_tcp/hook/pythonpath_develop.sh

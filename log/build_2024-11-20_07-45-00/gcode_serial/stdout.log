@@ -1,0 +1,32 @@
+running develop
+Removing /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode-serial.egg-link (link to .)
+running egg_info
+writing ../../build/gcode_serial/gcode_serial.egg-info/PKG-INFO
+writing dependency_links to ../../build/gcode_serial/gcode_serial.egg-info/dependency_links.txt
+writing entry points to ../../build/gcode_serial/gcode_serial.egg-info/entry_points.txt
+writing requirements to ../../build/gcode_serial/gcode_serial.egg-info/requires.txt
+writing top-level names to ../../build/gcode_serial/gcode_serial.egg-info/top_level.txt
+reading manifest file '../../build/gcode_serial/gcode_serial.egg-info/SOURCES.txt'
+writing manifest file '../../build/gcode_serial/gcode_serial.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/luc/ros2_ws/build/gcode_serial/build
+creating /home/luc/ros2_ws/build/gcode_serial/build/lib
+creating /home/luc/ros2_ws/build/gcode_serial/build/lib/gcode_serial
+copying gcode_serial/__init__.py -> /home/luc/ros2_ws/build/gcode_serial/build/lib/gcode_serial
+copying gcode_serial/gcode_sender.py -> /home/luc/ros2_ws/build/gcode_serial/build/lib/gcode_serial
+running install
+running install_lib
+creating /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode_serial
+copying /home/luc/ros2_ws/build/gcode_serial/build/lib/gcode_serial/__init__.py -> /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode_serial
+copying /home/luc/ros2_ws/build/gcode_serial/build/lib/gcode_serial/gcode_sender.py -> /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode_serial
+byte-compiling /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode_serial/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode_serial/gcode_sender.py to gcode_sender.cpython-310.pyc
+running install_data
+copying resource/gcode_serial -> /home/luc/ros2_ws/install/gcode_serial/share/ament_index/resource_index/packages
+copying package.xml -> /home/luc/ros2_ws/install/gcode_serial/share/gcode_serial
+running install_egg_info
+Copying ../../build/gcode_serial/gcode_serial.egg-info to /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode_serial-0.0.0-py3.10.egg-info
+running install_scripts
+Installing gcode_sender script to /home/luc/ros2_ws/install/gcode_serial/lib/gcode_serial
+writing list of installed files to '/home/luc/ros2_ws/build/gcode_serial/install.log'

@@ -1,0 +1,37 @@
+[3.566s] Invoking command in '/home/luc/ros2_ws/build/my_robot_controller': PYTHONPATH=/home/luc/ros2_ws/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/luc/ros2_ws/build/my_robot_controller/build
+[4.973s] running develop
+[4.980s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[4.981s]   warnings.warn(
+[5.923s] Removing /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[6.097s] Invoked command in '/home/luc/ros2_ws/build/my_robot_controller' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/luc/ros2_ws/build/my_robot_controller/build
+[6.109s] Invoking command in '/home/luc/ros2_ws/src/my_robot_controller': PYTHONPATH=/home/luc/ros2_ws/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/luc/ros2_ws/build/my_robot_controller/build install --record /home/luc/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed install_data --force
+[7.559s] running egg_info
+[7.562s] writing ../../build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO
+[7.564s] writing dependency_links to ../../build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt
+[7.565s] writing entry points to ../../build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt
+[7.566s] writing requirements to ../../build/my_robot_controller/my_robot_controller.egg-info/requires.txt
+[7.567s] writing top-level names to ../../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
+[7.578s] reading manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[7.584s] writing manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[7.585s] running build
+[7.586s] running build_py
+[7.588s] copying my_robot_controller/my_first_node.py -> /home/luc/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller
+[7.590s] copying my_robot_controller/segundo_nodo.py -> /home/luc/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller
+[7.593s] running install
+[7.595s] running install_lib
+[7.599s] creating /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[7.600s] copying /home/luc/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller/my_first_node.py -> /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[7.601s] copying /home/luc/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller/segundo_nodo.py -> /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[7.602s] copying /home/luc/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller/__init__.py -> /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[7.606s] byte-compiling /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/my_first_node.py to my_first_node.cpython-310.pyc
+[7.608s] byte-compiling /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/segundo_nodo.py to segundo_nodo.cpython-310.pyc
+[7.610s] byte-compiling /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/__init__.py to __init__.cpython-310.pyc
+[7.612s] running install_data
+[7.612s] copying resource/my_robot_controller -> /home/luc/ros2_ws/install/my_robot_controller/share/ament_index/resource_index/packages
+[7.617s] copying package.xml -> /home/luc/ros2_ws/install/my_robot_controller/share/my_robot_controller
+[7.617s] running install_egg_info
+[7.627s] Copying ../../build/my_robot_controller/my_robot_controller.egg-info to /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info
+[7.642s] running install_scripts
+[7.743s] Installing test_node script to /home/luc/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[7.745s] writing list of installed files to '/home/luc/ros2_ws/build/my_robot_controller/install.log'
+[7.893s] Invoked command in '/home/luc/ros2_ws/src/my_robot_controller' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/luc/ros2_ws/build/my_robot_controller/build install --record /home/luc/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed install_data --force

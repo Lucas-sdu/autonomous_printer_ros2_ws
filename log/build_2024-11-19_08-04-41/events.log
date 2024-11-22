@@ -1,0 +1,201 @@
+[0.000000] (-) TimerEvent: {}
+[0.001860] (gh_ros) JobQueued: {'identifier': 'gh_ros', 'dependencies': OrderedDict()}
+[0.002646] (gh_tcp) JobQueued: {'identifier': 'gh_tcp', 'dependencies': OrderedDict()}
+[0.003332] (my_robot_controller) JobQueued: {'identifier': 'my_robot_controller', 'dependencies': OrderedDict()}
+[0.003582] (gh_ros) JobStarted: {'identifier': 'gh_ros'}
+[0.073848] (gh_tcp) JobStarted: {'identifier': 'gh_tcp'}
+[0.098854] (-) TimerEvent: {}
+[0.117416] (my_robot_controller) JobStarted: {'identifier': 'my_robot_controller'}
+[0.199079] (-) TimerEvent: {}
+[0.299889] (-) TimerEvent: {}
+[0.400700] (-) TimerEvent: {}
+[0.501532] (-) TimerEvent: {}
+[0.602365] (-) TimerEvent: {}
+[0.703333] (-) TimerEvent: {}
+[0.804121] (-) TimerEvent: {}
+[0.905032] (-) TimerEvent: {}
+[1.005944] (-) TimerEvent: {}
+[1.107526] (-) TimerEvent: {}
+[1.213800] (-) TimerEvent: {}
+[1.316636] (-) TimerEvent: {}
+[1.417443] (-) TimerEvent: {}
+[1.518255] (-) TimerEvent: {}
+[1.619048] (-) TimerEvent: {}
+[1.719994] (-) TimerEvent: {}
+[1.821018] (-) TimerEvent: {}
+[1.922414] (-) TimerEvent: {}
+[2.023462] (-) TimerEvent: {}
+[2.124320] (-) TimerEvent: {}
+[2.225193] (-) TimerEvent: {}
+[2.326100] (-) TimerEvent: {}
+[2.427010] (-) TimerEvent: {}
+[2.527766] (-) TimerEvent: {}
+[2.628574] (-) TimerEvent: {}
+[2.729345] (-) TimerEvent: {}
+[2.830310] (-) TimerEvent: {}
+[2.931192] (-) TimerEvent: {}
+[3.031992] (-) TimerEvent: {}
+[3.132785] (-) TimerEvent: {}
+[3.233689] (-) TimerEvent: {}
+[3.334975] (-) TimerEvent: {}
+[3.436080] (-) TimerEvent: {}
+[3.536953] (-) TimerEvent: {}
+[3.638000] (-) TimerEvent: {}
+[3.738881] (-) TimerEvent: {}
+[3.839813] (-) TimerEvent: {}
+[3.940580] (-) TimerEvent: {}
+[4.041431] (-) TimerEvent: {}
+[4.142282] (-) TimerEvent: {}
+[4.243069] (-) TimerEvent: {}
+[4.343829] (-) TimerEvent: {}
+[4.444642] (-) TimerEvent: {}
+[4.545500] (-) TimerEvent: {}
+[4.646453] (-) TimerEvent: {}
+[4.747383] (-) TimerEvent: {}
+[4.848945] (-) TimerEvent: {}
+[4.952215] (-) TimerEvent: {}
+[5.053095] (-) TimerEvent: {}
+[5.153986] (-) TimerEvent: {}
+[5.255070] (-) TimerEvent: {}
+[5.356593] (-) TimerEvent: {}
+[5.458183] (-) TimerEvent: {}
+[5.559610] (-) TimerEvent: {}
+[5.660817] (-) TimerEvent: {}
+[5.762152] (-) TimerEvent: {}
+[5.864304] (-) TimerEvent: {}
+[5.966188] (-) TimerEvent: {}
+[6.068190] (-) TimerEvent: {}
+[6.169036] (-) TimerEvent: {}
+[6.269943] (-) TimerEvent: {}
+[6.371266] (-) TimerEvent: {}
+[6.473239] (-) TimerEvent: {}
+[6.583133] (-) TimerEvent: {}
+[6.685435] (-) TimerEvent: {}
+[6.787602] (-) TimerEvent: {}
+[6.890092] (-) TimerEvent: {}
+[6.992043] (-) TimerEvent: {}
+[7.094265] (-) TimerEvent: {}
+[7.195232] (-) TimerEvent: {}
+[7.296680] (-) TimerEvent: {}
+[7.398859] (-) TimerEvent: {}
+[7.500750] (-) TimerEvent: {}
+[7.604893] (-) TimerEvent: {}
+[7.624326] (my_robot_controller) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/luc/ros2_ws/build/my_robot_controller/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/home/luc/ros2_ws/build/my_robot_controller', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'luc', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/luc', 'OLDPWD': '/home/luc/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1269', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/luc/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'luc', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'luc', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/luc-desktop:@/tmp/.ICE-unix/1220,unix/luc-desktop:/tmp/.ICE-unix/1220', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4e28f5a1_b12f_47da_86ef_407401f2969d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2ZM0W2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.121', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/luc/ros2_ws/install/my_robot_controller:/home/luc/ros2_ws/install/gh_tcp:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/luc/ros2_ws/build/my_robot_controller', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/luc/ros2_ws/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[7.655160] (gh_ros) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/luc/ros2_ws/build/gh_ros/build', '--no-deps', 'symlink_data'], 'cwd': '/home/luc/ros2_ws/build/gh_ros', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'luc', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/luc', 'OLDPWD': '/home/luc/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1269', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/luc/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'luc', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'luc', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/luc-desktop:@/tmp/.ICE-unix/1220,unix/luc-desktop:/tmp/.ICE-unix/1220', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4e28f5a1_b12f_47da_86ef_407401f2969d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2ZM0W2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.121', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/luc/ros2_ws/install/my_robot_controller:/home/luc/ros2_ws/install/gh_tcp:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/luc/ros2_ws/build/gh_ros', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[7.705152] (-) TimerEvent: {}
+[7.707294] (gh_tcp) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/luc/ros2_ws/build/gh_tcp/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/home/luc/ros2_ws/build/gh_tcp', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'luc', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/luc', 'OLDPWD': '/home/luc/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1269', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/luc/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'luc', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'luc', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/luc-desktop:@/tmp/.ICE-unix/1220,unix/luc-desktop:/tmp/.ICE-unix/1220', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4e28f5a1_b12f_47da_86ef_407401f2969d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.2ZM0W2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.121', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/luc/ros2_ws/install/my_robot_controller:/home/luc/ros2_ws/install/gh_tcp:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/luc/ros2_ws/build/gh_tcp', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/luc/ros2_ws/build/gh_tcp/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:/home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[7.805441] (-) TimerEvent: {}
+[7.907913] (-) TimerEvent: {}
+[8.016528] (-) TimerEvent: {}
+[8.117822] (-) TimerEvent: {}
+[8.219445] (-) TimerEvent: {}
+[8.320382] (-) TimerEvent: {}
+[8.421322] (-) TimerEvent: {}
+[8.522245] (-) TimerEvent: {}
+[8.623150] (-) TimerEvent: {}
+[8.724134] (-) TimerEvent: {}
+[8.824994] (-) TimerEvent: {}
+[8.925869] (-) TimerEvent: {}
+[9.026765] (-) TimerEvent: {}
+[9.127728] (-) TimerEvent: {}
+[9.228658] (-) TimerEvent: {}
+[9.329566] (-) TimerEvent: {}
+[9.430555] (-) TimerEvent: {}
+[9.532166] (-) TimerEvent: {}
+[9.633078] (-) TimerEvent: {}
+[9.717668] (gh_ros) StdoutLine: {'line': b'running develop\n'}
+[9.725432] (gh_ros) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.\n'}
+[9.731006] (gh_ros) StderrLine: {'line': b'  warnings.warn(\n'}
+[9.734267] (-) TimerEvent: {}
+[9.735701] (my_robot_controller) StdoutLine: {'line': b'running develop\n'}
+[9.739752] (my_robot_controller) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.\n'}
+[9.743703] (my_robot_controller) StderrLine: {'line': b'  warnings.warn(\n'}
+[9.829102] (gh_tcp) StdoutLine: {'line': b'running develop\n'}
+[9.832515] (gh_tcp) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.\n'}
+[9.835842] (-) TimerEvent: {}
+[9.837034] (gh_tcp) StderrLine: {'line': b'  warnings.warn(\n'}
+[9.936084] (-) TimerEvent: {}
+[10.037559] (-) TimerEvent: {}
+[10.139077] (-) TimerEvent: {}
+[10.240538] (-) TimerEvent: {}
+[10.341977] (-) TimerEvent: {}
+[10.442893] (-) TimerEvent: {}
+[10.547136] (-) TimerEvent: {}
+[10.651144] (-) TimerEvent: {}
+[10.755092] (-) TimerEvent: {}
+[10.859128] (-) TimerEvent: {}
+[10.963176] (-) TimerEvent: {}
+[11.064113] (-) TimerEvent: {}
+[11.165044] (-) TimerEvent: {}
+[11.181238] (gh_ros) StdoutLine: {'line': b'running egg_info\n'}
+[11.189804] (gh_ros) StdoutLine: {'line': b'creating gh_ros.egg-info\n'}
+[11.210180] (gh_ros) StdoutLine: {'line': b'writing gh_ros.egg-info/PKG-INFO\n'}
+[11.211092] (gh_ros) StdoutLine: {'line': b'writing dependency_links to gh_ros.egg-info/dependency_links.txt\n'}
+[11.211725] (gh_ros) StdoutLine: {'line': b'writing entry points to gh_ros.egg-info/entry_points.txt\n'}
+[11.212291] (gh_ros) StdoutLine: {'line': b'writing requirements to gh_ros.egg-info/requires.txt\n'}
+[11.212907] (gh_ros) StdoutLine: {'line': b'writing top-level names to gh_ros.egg-info/top_level.txt\n'}
+[11.213448] (gh_ros) StdoutLine: {'line': b"writing manifest file 'gh_ros.egg-info/SOURCES.txt'\n"}
+[11.213983] (gh_ros) StdoutLine: {'line': b"reading manifest file 'gh_ros.egg-info/SOURCES.txt'\n"}
+[11.214501] (gh_ros) StdoutLine: {'line': b"writing manifest file 'gh_ros.egg-info/SOURCES.txt'\n"}
+[11.221328] (gh_ros) StdoutLine: {'line': b'running build_ext\n'}
+[11.223490] (gh_ros) StdoutLine: {'line': b'Creating /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh-ros.egg-link (link to .)\n'}
+[11.228885] (gh_ros) StdoutLine: {'line': b'Installing gh_subscriber script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros\n'}
+[11.232903] (gh_ros) StdoutLine: {'line': b'\n'}
+[11.236538] (gh_ros) StdoutLine: {'line': b'Installed /home/luc/ros2_ws/build/gh_ros\n'}
+[11.241023] (gh_ros) StdoutLine: {'line': b'running symlink_data\n'}
+[11.245428] (gh_ros) StdoutLine: {'line': b'creating /home/luc/ros2_ws/install/gh_ros/share/ament_index\n'}
+[11.250294] (gh_ros) StdoutLine: {'line': b'creating /home/luc/ros2_ws/install/gh_ros/share/ament_index/resource_index\n'}
+[11.255322] (gh_ros) StdoutLine: {'line': b'creating /home/luc/ros2_ws/install/gh_ros/share/ament_index/resource_index/packages\n'}
+[11.260182] (gh_ros) StdoutLine: {'line': b'symbolically linking /home/luc/ros2_ws/build/gh_ros/resource/gh_ros -> /home/luc/ros2_ws/install/gh_ros/share/ament_index/resource_index/packages\n'}
+[11.265024] (gh_ros) StdoutLine: {'line': b'symbolically linking /home/luc/ros2_ws/build/gh_ros/package.xml -> /home/luc/ros2_ws/install/gh_ros/share/gh_ros\n'}
+[11.269561] (-) TimerEvent: {}
+[11.312273] (my_robot_controller) StdoutLine: {'line': b'running egg_info\n'}
+[11.313970] (my_robot_controller) StdoutLine: {'line': b'writing my_robot_controller.egg-info/PKG-INFO\n'}
+[11.319866] (my_robot_controller) StdoutLine: {'line': b'writing dependency_links to my_robot_controller.egg-info/dependency_links.txt\n'}
+[11.324244] (my_robot_controller) StdoutLine: {'line': b'writing entry points to my_robot_controller.egg-info/entry_points.txt\n'}
+[11.329079] (my_robot_controller) StdoutLine: {'line': b'writing requirements to my_robot_controller.egg-info/requires.txt\n'}
+[11.332609] (my_robot_controller) StdoutLine: {'line': b'writing top-level names to my_robot_controller.egg-info/top_level.txt\n'}
+[11.347471] (my_robot_controller) StdoutLine: {'line': b"reading manifest file 'my_robot_controller.egg-info/SOURCES.txt'\n"}
+[11.357279] (my_robot_controller) StdoutLine: {'line': b"writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'\n"}
+[11.369924] (-) TimerEvent: {}
+[11.371545] (my_robot_controller) StdoutLine: {'line': b'running build_ext\n'}
+[11.374686] (my_robot_controller) StdoutLine: {'line': b'Creating /home/luc/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)\n'}
+[11.385996] (my_robot_controller) StdoutLine: {'line': b'Installing controlador script to /home/luc/ros2_ws/install/my_robot_controller/lib/my_robot_controller\n'}
+[11.392038] (my_robot_controller) StdoutLine: {'line': b'Installing draw_circle script to /home/luc/ros2_ws/install/my_robot_controller/lib/my_robot_controller\n'}
+[11.397021] (my_robot_controller) StdoutLine: {'line': b'Installing subscriptor script to /home/luc/ros2_ws/install/my_robot_controller/lib/my_robot_controller\n'}
+[11.411706] (my_robot_controller) StdoutLine: {'line': b'Installing test_node script to /home/luc/ros2_ws/install/my_robot_controller/lib/my_robot_controller\n'}
+[11.413105] (my_robot_controller) StdoutLine: {'line': b'Installing test_nodo script to /home/luc/ros2_ws/install/my_robot_controller/lib/my_robot_controller\n'}
+[11.416629] (my_robot_controller) StdoutLine: {'line': b'\n'}
+[11.418171] (my_robot_controller) StdoutLine: {'line': b'Installed /home/luc/ros2_ws/build/my_robot_controller\n'}
+[11.420243] (my_robot_controller) StdoutLine: {'line': b'running symlink_data\n'}
+[11.424257] (my_robot_controller) StdoutLine: {'line': b'symbolically linking /home/luc/ros2_ws/build/my_robot_controller/resource/my_robot_controller -> /home/luc/ros2_ws/install/my_robot_controller/share/ament_index/resource_index/packages\n'}
+[11.426616] (my_robot_controller) StdoutLine: {'line': b'symbolically linking /home/luc/ros2_ws/build/my_robot_controller/package.xml -> /home/luc/ros2_ws/install/my_robot_controller/share/my_robot_controller\n'}
+[11.439561] (gh_ros) CommandEnded: {'returncode': 0}
+[11.475927] (-) TimerEvent: {}
+[11.578312] (-) TimerEvent: {}
+[11.629155] (gh_ros) JobEnded: {'identifier': 'gh_ros', 'rc': 0}
+[11.666588] (my_robot_controller) CommandEnded: {'returncode': 0}
+[11.678715] (-) TimerEvent: {}
+[11.707209] (gh_tcp) StdoutLine: {'line': b'running egg_info\n'}
+[11.714799] (gh_tcp) StdoutLine: {'line': b'writing gh_tcp.egg-info/PKG-INFO\n'}
+[11.722545] (gh_tcp) StdoutLine: {'line': b'writing dependency_links to gh_tcp.egg-info/dependency_links.txt\n'}
+[11.723309] (gh_tcp) StdoutLine: {'line': b'writing entry points to gh_tcp.egg-info/entry_points.txt\n'}
+[11.723960] (gh_tcp) StdoutLine: {'line': b'writing requirements to gh_tcp.egg-info/requires.txt\n'}
+[11.724901] (gh_tcp) StdoutLine: {'line': b'writing top-level names to gh_tcp.egg-info/top_level.txt\n'}
+[11.730639] (gh_tcp) StdoutLine: {'line': b"reading manifest file 'gh_tcp.egg-info/SOURCES.txt'\n"}
+[11.743270] (gh_tcp) StdoutLine: {'line': b"writing manifest file 'gh_tcp.egg-info/SOURCES.txt'\n"}
+[11.757973] (gh_tcp) StdoutLine: {'line': b'running build_ext\n'}
+[11.767175] (gh_tcp) StdoutLine: {'line': b'Creating /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh-tcp.egg-link (link to .)\n'}
+[11.768000] (gh_tcp) StdoutLine: {'line': b'Installing gh_tcp_node script to /home/luc/ros2_ws/install/gh_tcp/lib/gh_tcp\n'}
+[11.775006] (gh_tcp) StdoutLine: {'line': b'\n'}
+[11.776553] (gh_tcp) StdoutLine: {'line': b'Installed /home/luc/ros2_ws/build/gh_tcp\n'}
+[11.799275] (gh_tcp) StdoutLine: {'line': b'running symlink_data\n'}
+[11.800800] (-) TimerEvent: {}
+[11.801828] (gh_tcp) StdoutLine: {'line': b'symbolically linking /home/luc/ros2_ws/build/gh_tcp/resource/gh_tcp -> /home/luc/ros2_ws/install/gh_tcp/share/ament_index/resource_index/packages\n'}
+[11.803183] (gh_tcp) StdoutLine: {'line': b'symbolically linking /home/luc/ros2_ws/build/gh_tcp/package.xml -> /home/luc/ros2_ws/install/gh_tcp/share/gh_tcp\n'}
+[11.813354] (my_robot_controller) JobEnded: {'identifier': 'my_robot_controller', 'rc': 0}
+[11.901321] (-) TimerEvent: {}
+[11.975355] (gh_tcp) CommandEnded: {'returncode': 0}
+[12.001423] (-) TimerEvent: {}
+[12.027378] (gh_tcp) JobEnded: {'identifier': 'gh_tcp', 'rc': 0}
+[12.032710] (-) EventReactorShutdown: {}

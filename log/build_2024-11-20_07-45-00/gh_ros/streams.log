@@ -1,0 +1,38 @@
+[8.062s] Invoking command in '/home/luc/ros2_ws/build/gh_ros': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build
+[10.146s] running develop
+[10.147s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[10.148s]   warnings.warn(
+[13.703s] Removing /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh-ros.egg-link (link to .)
+[14.630s] Invoked command in '/home/luc/ros2_ws/build/gh_ros' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build
+[14.670s] Invoking command in '/home/luc/ros2_ws/src/gh_ros': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/gh_ros build --build-base /home/luc/ros2_ws/build/gh_ros/build install --record /home/luc/ros2_ws/build/gh_ros/install.log --single-version-externally-managed install_data --force
+[22.726s] running egg_info
+[22.762s] writing ../../build/gh_ros/gh_ros.egg-info/PKG-INFO
+[22.780s] writing dependency_links to ../../build/gh_ros/gh_ros.egg-info/dependency_links.txt
+[22.834s] writing entry points to ../../build/gh_ros/gh_ros.egg-info/entry_points.txt
+[22.847s] writing requirements to ../../build/gh_ros/gh_ros.egg-info/requires.txt
+[22.849s] writing top-level names to ../../build/gh_ros/gh_ros.egg-info/top_level.txt
+[22.909s] reading manifest file '../../build/gh_ros/gh_ros.egg-info/SOURCES.txt'
+[22.942s] writing manifest file '../../build/gh_ros/gh_ros.egg-info/SOURCES.txt'
+[22.989s] running build
+[23.001s] running build_py
+[23.012s] creating /home/luc/ros2_ws/build/gh_ros/build
+[23.014s] creating /home/luc/ros2_ws/build/gh_ros/build/lib
+[23.044s] creating /home/luc/ros2_ws/build/gh_ros/build/lib/gh_ros
+[23.045s] copying gh_ros/gh_subscriber.py -> /home/luc/ros2_ws/build/gh_ros/build/lib/gh_ros
+[23.046s] copying gh_ros/__init__.py -> /home/luc/ros2_ws/build/gh_ros/build/lib/gh_ros
+[23.047s] running install
+[23.064s] running install_lib
+[23.072s] creating /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh_ros
+[23.074s] copying /home/luc/ros2_ws/build/gh_ros/build/lib/gh_ros/gh_subscriber.py -> /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh_ros
+[23.122s] copying /home/luc/ros2_ws/build/gh_ros/build/lib/gh_ros/__init__.py -> /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh_ros
+[23.204s] byte-compiling /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh_ros/gh_subscriber.py to gh_subscriber.cpython-310.pyc
+[23.205s] byte-compiling /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh_ros/__init__.py to __init__.cpython-310.pyc
+[23.206s] running install_data
+[23.209s] copying resource/gh_ros -> /home/luc/ros2_ws/install/gh_ros/share/ament_index/resource_index/packages
+[23.210s] copying package.xml -> /home/luc/ros2_ws/install/gh_ros/share/gh_ros
+[23.211s] running install_egg_info
+[23.227s] Copying ../../build/gh_ros/gh_ros.egg-info to /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh_ros-0.0.0-py3.10.egg-info
+[23.264s] running install_scripts
+[23.759s] Installing gh_subscriber script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+[23.773s] writing list of installed files to '/home/luc/ros2_ws/build/gh_ros/install.log'
+[24.818s] Invoked command in '/home/luc/ros2_ws/src/gh_ros' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/gh_ros build --build-base /home/luc/ros2_ws/build/gh_ros/build install --record /home/luc/ros2_ws/build/gh_ros/install.log --single-version-externally-managed install_data --force

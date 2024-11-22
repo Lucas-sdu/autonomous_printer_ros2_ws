@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/gh_tcp/gh_tcp.egg-info/PKG-INFO
+writing dependency_links to ../../build/gh_tcp/gh_tcp.egg-info/dependency_links.txt
+writing entry points to ../../build/gh_tcp/gh_tcp.egg-info/entry_points.txt
+writing requirements to ../../build/gh_tcp/gh_tcp.egg-info/requires.txt
+writing top-level names to ../../build/gh_tcp/gh_tcp.egg-info/top_level.txt
+reading manifest file '../../build/gh_tcp/gh_tcp.egg-info/SOURCES.txt'
+writing manifest file '../../build/gh_tcp/gh_tcp.egg-info/SOURCES.txt'
+running build
+running build_py
+copying gh_tcp/gh_tcp_node.py -> /home/luc/ros2_ws/build/gh_tcp/build/lib/gh_tcp
+running install
+running install_lib
+copying /home/luc/ros2_ws/build/gh_tcp/build/lib/gh_tcp/gh_tcp_node.py -> /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp
+byte-compiling /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp/gh_tcp_node.py to gh_tcp_node.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/gh_tcp/gh_tcp.egg-info to /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp-0.0.0-py3.10.egg-info
+running install_scripts
+Installing gh_tcp_node script to /home/luc/ros2_ws/install/gh_tcp/lib/gh_tcp
+writing list of installed files to '/home/luc/ros2_ws/build/gh_tcp/install.log'

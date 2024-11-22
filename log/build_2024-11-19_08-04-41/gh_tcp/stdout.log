@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing gh_tcp.egg-info/PKG-INFO
+writing dependency_links to gh_tcp.egg-info/dependency_links.txt
+writing entry points to gh_tcp.egg-info/entry_points.txt
+writing requirements to gh_tcp.egg-info/requires.txt
+writing top-level names to gh_tcp.egg-info/top_level.txt
+reading manifest file 'gh_tcp.egg-info/SOURCES.txt'
+writing manifest file 'gh_tcp.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh-tcp.egg-link (link to .)
+Installing gh_tcp_node script to /home/luc/ros2_ws/install/gh_tcp/lib/gh_tcp
+
+Installed /home/luc/ros2_ws/build/gh_tcp
+running symlink_data
+symbolically linking /home/luc/ros2_ws/build/gh_tcp/resource/gh_tcp -> /home/luc/ros2_ws/install/gh_tcp/share/ament_index/resource_index/packages
+symbolically linking /home/luc/ros2_ws/build/gh_tcp/package.xml -> /home/luc/ros2_ws/install/gh_tcp/share/gh_tcp

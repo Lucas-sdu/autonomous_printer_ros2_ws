@@ -1,0 +1,26 @@
+[9.828s] Invoking command in '/home/luc/ros2_ws/build/gcode_serial': PYTHONPATH=/home/luc/ros2_ws/build/gcode_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gcode_serial/build --no-deps symlink_data
+[12.556s] running develop
+[12.567s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[12.570s]   warnings.warn(
+[18.308s] running egg_info
+[18.311s] creating gcode_serial.egg-info
+[18.320s] writing gcode_serial.egg-info/PKG-INFO
+[18.322s] writing dependency_links to gcode_serial.egg-info/dependency_links.txt
+[18.323s] writing entry points to gcode_serial.egg-info/entry_points.txt
+[18.323s] writing requirements to gcode_serial.egg-info/requires.txt
+[18.324s] writing top-level names to gcode_serial.egg-info/top_level.txt
+[18.358s] writing manifest file 'gcode_serial.egg-info/SOURCES.txt'
+[18.359s] reading manifest file 'gcode_serial.egg-info/SOURCES.txt'
+[18.360s] writing manifest file 'gcode_serial.egg-info/SOURCES.txt'
+[18.371s] running build_ext
+[18.373s] Creating /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode-serial.egg-link (link to .)
+[18.387s] Installing gcode_sender script to /home/luc/ros2_ws/install/gcode_serial/lib/gcode_serial
+[18.393s] 
+[18.396s] Installed /home/luc/ros2_ws/build/gcode_serial
+[18.399s] running symlink_data
+[18.419s] creating /home/luc/ros2_ws/install/gcode_serial/share/ament_index
+[18.430s] creating /home/luc/ros2_ws/install/gcode_serial/share/ament_index/resource_index
+[18.433s] creating /home/luc/ros2_ws/install/gcode_serial/share/ament_index/resource_index/packages
+[18.436s] symbolically linking /home/luc/ros2_ws/build/gcode_serial/resource/gcode_serial -> /home/luc/ros2_ws/install/gcode_serial/share/ament_index/resource_index/packages
+[18.438s] symbolically linking /home/luc/ros2_ws/build/gcode_serial/package.xml -> /home/luc/ros2_ws/install/gcode_serial/share/gcode_serial
+[18.919s] Invoked command in '/home/luc/ros2_ws/build/gcode_serial' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gcode_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gcode_serial/build --no-deps symlink_data

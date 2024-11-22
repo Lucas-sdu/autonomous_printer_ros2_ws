@@ -1,0 +1,19 @@
+[9.697s] Invoking command in '/home/luc/ros2_ws/build/gh_tcp': PYTHONPATH=/home/luc/ros2_ws/build/gh_tcp/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_tcp/build --no-deps symlink_data
+[12.223s] running develop
+[12.225s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[12.225s]   warnings.warn(
+[19.454s] running egg_info
+[19.455s] writing gh_tcp.egg-info/PKG-INFO
+[19.456s] writing dependency_links to gh_tcp.egg-info/dependency_links.txt
+[19.456s] writing entry points to gh_tcp.egg-info/entry_points.txt
+[19.457s] writing requirements to gh_tcp.egg-info/requires.txt
+[19.458s] writing top-level names to gh_tcp.egg-info/top_level.txt
+[19.484s] reading manifest file 'gh_tcp.egg-info/SOURCES.txt'
+[19.504s] writing manifest file 'gh_tcp.egg-info/SOURCES.txt'
+[19.529s] running build_ext
+[19.530s] Creating /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh-tcp.egg-link (link to .)
+[19.543s] Installing gh_tcp_node script to /home/luc/ros2_ws/install/gh_tcp/lib/gh_tcp
+[19.555s] 
+[19.556s] Installed /home/luc/ros2_ws/build/gh_tcp
+[19.560s] running symlink_data
+[20.158s] Invoked command in '/home/luc/ros2_ws/build/gh_tcp' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gh_tcp/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_tcp/build --no-deps symlink_data

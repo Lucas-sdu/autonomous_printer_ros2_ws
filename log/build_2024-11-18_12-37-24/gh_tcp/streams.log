@@ -1,0 +1,37 @@
+[5.216s] Invoking command in '/home/luc/ros2_ws/src/gh_tcp': PYTHONPATH=/home/luc/ros2_ws/build/gh_tcp/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/gh_tcp build --build-base /home/luc/ros2_ws/build/gh_tcp/build install --record /home/luc/ros2_ws/build/gh_tcp/install.log --single-version-externally-managed install_data
+[6.706s] running egg_info
+[6.709s] creating ../../build/gh_tcp/gh_tcp.egg-info
+[6.710s] writing ../../build/gh_tcp/gh_tcp.egg-info/PKG-INFO
+[6.711s] writing dependency_links to ../../build/gh_tcp/gh_tcp.egg-info/dependency_links.txt
+[6.712s] writing entry points to ../../build/gh_tcp/gh_tcp.egg-info/entry_points.txt
+[6.713s] writing requirements to ../../build/gh_tcp/gh_tcp.egg-info/requires.txt
+[6.714s] writing top-level names to ../../build/gh_tcp/gh_tcp.egg-info/top_level.txt
+[6.715s] writing manifest file '../../build/gh_tcp/gh_tcp.egg-info/SOURCES.txt'
+[6.726s] reading manifest file '../../build/gh_tcp/gh_tcp.egg-info/SOURCES.txt'
+[6.729s] writing manifest file '../../build/gh_tcp/gh_tcp.egg-info/SOURCES.txt'
+[6.730s] running build
+[6.731s] running build_py
+[6.732s] creating /home/luc/ros2_ws/build/gh_tcp/build
+[6.734s] creating /home/luc/ros2_ws/build/gh_tcp/build/lib
+[6.734s] creating /home/luc/ros2_ws/build/gh_tcp/build/lib/gh_tcp
+[6.735s] copying gh_tcp/gh_tcp_node.py -> /home/luc/ros2_ws/build/gh_tcp/build/lib/gh_tcp
+[6.736s] copying gh_tcp/__init__.py -> /home/luc/ros2_ws/build/gh_tcp/build/lib/gh_tcp
+[6.736s] running install
+[6.737s] running install_lib
+[6.741s] creating /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp
+[6.742s] copying /home/luc/ros2_ws/build/gh_tcp/build/lib/gh_tcp/gh_tcp_node.py -> /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp
+[6.743s] copying /home/luc/ros2_ws/build/gh_tcp/build/lib/gh_tcp/__init__.py -> /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp
+[6.746s] byte-compiling /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp/gh_tcp_node.py to gh_tcp_node.cpython-310.pyc
+[6.749s] byte-compiling /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp/__init__.py to __init__.cpython-310.pyc
+[6.750s] running install_data
+[6.751s] creating /home/luc/ros2_ws/install/gh_tcp/share/ament_index
+[6.752s] creating /home/luc/ros2_ws/install/gh_tcp/share/ament_index/resource_index
+[6.752s] creating /home/luc/ros2_ws/install/gh_tcp/share/ament_index/resource_index/packages
+[6.753s] copying resource/gh_tcp -> /home/luc/ros2_ws/install/gh_tcp/share/ament_index/resource_index/packages
+[6.754s] copying package.xml -> /home/luc/ros2_ws/install/gh_tcp/share/gh_tcp
+[6.754s] running install_egg_info
+[6.763s] Copying ../../build/gh_tcp/gh_tcp.egg-info to /home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages/gh_tcp-0.0.0-py3.10.egg-info
+[6.771s] running install_scripts
+[6.878s] Installing gh_tcp_node script to /home/luc/ros2_ws/install/gh_tcp/lib/gh_tcp
+[6.879s] writing list of installed files to '/home/luc/ros2_ws/build/gh_tcp/install.log'
+[7.032s] Invoked command in '/home/luc/ros2_ws/src/gh_tcp' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gh_tcp/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_tcp/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/gh_tcp build --build-base /home/luc/ros2_ws/build/gh_tcp/build install --record /home/luc/ros2_ws/build/gh_tcp/install.log --single-version-externally-managed install_data
