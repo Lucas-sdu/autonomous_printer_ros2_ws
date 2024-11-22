@@ -1,0 +1,27 @@
+//START ROSBRIDGE CMD
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+//GH SUBSCRIBER NODE
+ros2 run gh_ros gh_subscriber
+
+//Run octoprint
+~/OctoPrint/venv/bin/octoprint serve
+M105
+//serial gcode sender node
+ ros2 run gcode_serial gcode_sender --ros-args -p serial_port:=/dev/ttyACM0 -p baud_rate:=115200
+
+//serial gcode manager node
+ros2 run gcode_serial gcode_manager --ros-args -p serial_port:=/dev/ttyACM0 -p baud_rate:=115200
+
+//Send Commands
+ros2 topic pub --once /gcode_command std_msgs/String "data: 'G28'"
+ros2 topic pub --once /gcode_command std_msgs/String "data: 'G1 X250 Y110 F5200'"
+
+
+
+//STARTUP NODE ORDER
+
+ros2 run gcode_serial gcode_manager --ros-args -p serial_port:=/dev/ttyACM0 -p baud_rate:=115200
+ (Then prepare printer and enter on the node)
+ros2 run gh_ros gh_subscriber
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+
