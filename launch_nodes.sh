@@ -15,3 +15,8 @@ gnome-terminal -- bash -c "ros2 run gh_ros ros_to_gh; exec bash"
 
 # Launch rosbridge_server in a new terminal
 gnome-terminal -- bash -c "ros2 launch rosbridge_server rosbridge_websocket_launch.xml; exec bash"
+
+# Send Home command so everything is fine
+echo "Press Enter to send the G28 command to /grasshopper_input topic..."
+read -p ""
+ros2 topic pub --once /grasshopper_input std_msgs/String '{"data": "G28"}'
