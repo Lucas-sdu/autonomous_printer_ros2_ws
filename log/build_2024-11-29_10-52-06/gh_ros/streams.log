@@ -1,0 +1,20 @@
+[7.692s] Invoking command in '/home/luc/ros2_ws/build/gh_ros': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build --no-deps symlink_data
+[9.670s] running develop
+[9.672s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[9.672s]   warnings.warn(
+[11.596s] running egg_info
+[11.598s] writing gh_ros.egg-info/PKG-INFO
+[11.608s] writing dependency_links to gh_ros.egg-info/dependency_links.txt
+[11.611s] writing entry points to gh_ros.egg-info/entry_points.txt
+[11.613s] writing requirements to gh_ros.egg-info/requires.txt
+[11.615s] writing top-level names to gh_ros.egg-info/top_level.txt
+[11.631s] reading manifest file 'gh_ros.egg-info/SOURCES.txt'
+[11.643s] writing manifest file 'gh_ros.egg-info/SOURCES.txt'
+[11.659s] running build_ext
+[11.667s] Creating /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh-ros.egg-link (link to .)
+[11.681s] Installing gh_subscriber script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+[11.691s] Installing ros_to_gh script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+[11.693s] 
+[11.694s] Installed /home/luc/ros2_ws/build/gh_ros
+[11.699s] running symlink_data
+[11.987s] Invoked command in '/home/luc/ros2_ws/build/gh_ros' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build --no-deps symlink_data

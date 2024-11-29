@@ -1,0 +1,1 @@
+/home/luc/ros2_ws/build/startup_automation/launch/startup.launch.py

@@ -1,0 +1,20 @@
+[7.925s] Invoking command in '/home/luc/ros2_ws/build/gh_ros': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build --no-deps symlink_data
+[10.123s] running develop
+[10.128s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[10.128s]   warnings.warn(
+[13.277s] running egg_info
+[13.288s] writing gh_ros.egg-info/PKG-INFO
+[13.289s] writing dependency_links to gh_ros.egg-info/dependency_links.txt
+[13.304s] writing entry points to gh_ros.egg-info/entry_points.txt
+[13.310s] writing requirements to gh_ros.egg-info/requires.txt
+[13.366s] writing top-level names to gh_ros.egg-info/top_level.txt
+[13.367s] reading manifest file 'gh_ros.egg-info/SOURCES.txt'
+[13.375s] writing manifest file 'gh_ros.egg-info/SOURCES.txt'
+[13.378s] running build_ext
+[13.394s] Creating /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh-ros.egg-link (link to .)
+[13.395s] Installing gh_subscriber script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+[13.396s] Installing ros_to_gh script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+[13.404s] 
+[13.406s] Installed /home/luc/ros2_ws/build/gh_ros
+[13.408s] running symlink_data
+[14.616s] Invoked command in '/home/luc/ros2_ws/build/gh_ros' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build --no-deps symlink_data

@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'gh_subscriber = gh_ros.gh_subscriber:main',
+            'ros_to_gh = gh_ros.ros_to_gh:main',
         ],
     },
 )

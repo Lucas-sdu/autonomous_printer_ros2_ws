@@ -1,0 +1,20 @@
+[7.736s] Invoking command in '/home/luc/ros2_ws/build/gcode_serial': PYTHONPATH=/home/luc/ros2_ws/build/gcode_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gcode_serial/build --no-deps symlink_data
+[9.668s] running develop
+[9.673s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[9.674s]   warnings.warn(
+[11.358s] running egg_info
+[11.363s] writing gcode_serial.egg-info/PKG-INFO
+[11.364s] writing dependency_links to gcode_serial.egg-info/dependency_links.txt
+[11.365s] writing entry points to gcode_serial.egg-info/entry_points.txt
+[11.382s] writing requirements to gcode_serial.egg-info/requires.txt
+[11.396s] writing top-level names to gcode_serial.egg-info/top_level.txt
+[11.397s] reading manifest file 'gcode_serial.egg-info/SOURCES.txt'
+[11.406s] writing manifest file 'gcode_serial.egg-info/SOURCES.txt'
+[11.425s] running build_ext
+[11.426s] Creating /home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages/gcode-serial.egg-link (link to .)
+[11.439s] Installing gcode_manager script to /home/luc/ros2_ws/install/gcode_serial/lib/gcode_serial
+[11.444s] Installing gcode_sender script to /home/luc/ros2_ws/install/gcode_serial/lib/gcode_serial
+[11.450s] 
+[11.452s] Installed /home/luc/ros2_ws/build/gcode_serial
+[11.458s] running symlink_data
+[11.968s] Invoked command in '/home/luc/ros2_ws/build/gcode_serial' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gcode_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gcode_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gcode_serial/build --no-deps symlink_data

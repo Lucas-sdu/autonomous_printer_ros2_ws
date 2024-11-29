@@ -1,0 +1,21 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+creating startup_automation.egg-info
+writing startup_automation.egg-info/PKG-INFO
+writing dependency_links to startup_automation.egg-info/dependency_links.txt
+writing entry points to startup_automation.egg-info/entry_points.txt
+writing requirements to startup_automation.egg-info/requires.txt
+writing top-level names to startup_automation.egg-info/top_level.txt
+writing manifest file 'startup_automation.egg-info/SOURCES.txt'
+reading manifest file 'startup_automation.egg-info/SOURCES.txt'
+writing manifest file 'startup_automation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/luc/ros2_ws/install/startup_automation/lib/python3.10/site-packages/startup-automation.egg-link (link to .)
+
+Installed /home/luc/ros2_ws/build/startup_automation
+running symlink_data
+symbolically linking /home/luc/ros2_ws/build/startup_automation/package.xml -> /home/luc/ros2_ws/install/startup_automation/share/startup_automation
+creating /home/luc/ros2_ws/install/startup_automation/share/startup_automation/launch
+symbolically linking /home/luc/ros2_ws/build/startup_automation/launch/startup.launch.py -> /home/luc/ros2_ws/install/startup_automation/share/startup_automation/launch
