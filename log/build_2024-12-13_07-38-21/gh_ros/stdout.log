@@ -1,0 +1,16 @@
+running develop
+running egg_info
+writing gh_ros.egg-info/PKG-INFO
+writing dependency_links to gh_ros.egg-info/dependency_links.txt
+writing entry points to gh_ros.egg-info/entry_points.txt
+writing requirements to gh_ros.egg-info/requires.txt
+writing top-level names to gh_ros.egg-info/top_level.txt
+reading manifest file 'gh_ros.egg-info/SOURCES.txt'
+writing manifest file 'gh_ros.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh-ros.egg-link (link to .)
+Installing gh_subscriber script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+Installing ros_to_gh script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+
+Installed /home/luc/ros2_ws/build/gh_ros
+running symlink_data

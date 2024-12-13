@@ -1,0 +1,19 @@
+[24.576s] Invoking command in '/home/luc/ros2_ws/build/ard_ros': PYTHONPATH=/home/luc/ros2_ws/build/ard_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/ard_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/ard_ros/build --no-deps symlink_data
+[36.975s] running develop
+[36.977s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[36.978s]   warnings.warn(
+[47.342s] running egg_info
+[47.355s] writing ard_ros.egg-info/PKG-INFO
+[47.367s] writing dependency_links to ard_ros.egg-info/dependency_links.txt
+[47.412s] writing entry points to ard_ros.egg-info/entry_points.txt
+[47.435s] writing requirements to ard_ros.egg-info/requires.txt
+[47.436s] writing top-level names to ard_ros.egg-info/top_level.txt
+[47.437s] reading manifest file 'ard_ros.egg-info/SOURCES.txt'
+[47.465s] writing manifest file 'ard_ros.egg-info/SOURCES.txt'
+[47.493s] running build_ext
+[47.517s] Creating /home/luc/ros2_ws/install/ard_ros/lib/python3.10/site-packages/ard-ros.egg-link (link to .)
+[47.580s] Installing serial_comm script to /home/luc/ros2_ws/install/ard_ros/lib/ard_ros
+[47.604s] 
+[47.650s] Installed /home/luc/ros2_ws/build/ard_ros
+[47.671s] running symlink_data
+[54.483s] Invoked command in '/home/luc/ros2_ws/build/ard_ros' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/ard_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/ard_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/ard_ros/build --no-deps symlink_data

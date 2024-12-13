@@ -10,4 +10,7 @@ controller.egg-info/entry_points.txt
 controller.egg-info/requires.txt
 controller.egg-info/top_level.txt
 controller.egg-info/zip-safe
+controller/states/__init__.py
+controller/states/placeholder_state.py
+controller/states/startup_state.py
 resource/controller

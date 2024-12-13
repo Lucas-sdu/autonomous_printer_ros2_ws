@@ -1,0 +1,18 @@
+[20.654s] Invoking command in '/home/luc/ros2_ws/build/controller': PYTHONPATH=/home/luc/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/controller/build --no-deps
+[30.418s] running develop
+[30.420s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[30.421s]   warnings.warn(
+[37.381s] running egg_info
+[37.390s] writing controller.egg-info/PKG-INFO
+[37.419s] writing dependency_links to controller.egg-info/dependency_links.txt
+[37.433s] writing entry points to controller.egg-info/entry_points.txt
+[37.450s] writing requirements to controller.egg-info/requires.txt
+[37.459s] writing top-level names to controller.egg-info/top_level.txt
+[37.591s] reading manifest file 'controller.egg-info/SOURCES.txt'
+[37.616s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[37.638s] running build_ext
+[37.643s] Creating /home/luc/ros2_ws/install/controller/lib/python3.10/site-packages/controller.egg-link (link to .)
+[37.660s] Installing controller_node script to /home/luc/ros2_ws/install/controller/lib/controller
+[37.689s] 
+[37.721s] Installed /home/luc/ros2_ws/build/controller
+[38.696s] Invoked command in '/home/luc/ros2_ws/build/controller' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/controller/build --no-deps

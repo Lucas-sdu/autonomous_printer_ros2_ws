@@ -1,0 +1,20 @@
+[19.921s] Invoking command in '/home/luc/ros2_ws/build/gh_ros': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build --no-deps symlink_data
+[29.338s] running develop
+[29.343s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[29.362s]   warnings.warn(
+[36.986s] running egg_info
+[36.997s] writing gh_ros.egg-info/PKG-INFO
+[37.020s] writing dependency_links to gh_ros.egg-info/dependency_links.txt
+[37.033s] writing entry points to gh_ros.egg-info/entry_points.txt
+[37.034s] writing requirements to gh_ros.egg-info/requires.txt
+[37.042s] writing top-level names to gh_ros.egg-info/top_level.txt
+[37.120s] reading manifest file 'gh_ros.egg-info/SOURCES.txt'
+[37.174s] writing manifest file 'gh_ros.egg-info/SOURCES.txt'
+[37.251s] running build_ext
+[37.252s] Creating /home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages/gh-ros.egg-link (link to .)
+[37.270s] Installing gh_subscriber script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+[37.272s] Installing ros_to_gh script to /home/luc/ros2_ws/install/gh_ros/lib/gh_ros
+[37.288s] 
+[37.291s] Installed /home/luc/ros2_ws/build/gh_ros
+[37.295s] running symlink_data
+[39.417s] Invoked command in '/home/luc/ros2_ws/build/gh_ros' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/gh_ros/build --no-deps symlink_data

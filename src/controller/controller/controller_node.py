@@ -3,51 +3,17 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
-
-# Startup State Class
-class StartupState:
-    def __init__(self, name):
-        self.name = name
-        self.counter = 0  # Simple condition counter
-    
-    def on_enter(self):
-        print(f"Entering state: {self.name}")
-        self.counter = 0
-
-    def execute(self):
-        self.counter += 1
-        print(f"Executing state: {self.name} | Counter: {self.counter}")
-        # Placeholder condition: Transition after counter reaches 5
-        if self.counter >= 5:
-            return "done"
-        return f"Startup counter: {self.counter}"
-
-    def on_exit(self):
-        print(f"Exiting state: {self.name}")
-
-# Placeholder State Class
-class State:
-    def __init__(self, name):
-        self.name = name
-        self.counter = 0  # Add counter
-        
-    def on_enter(self):
-        print(f"Entering state: {self.name}")
-
-    def execute(self):
-        self.counter += 1
-        print(f"Executing state: {self.name} | Counter: {self.counter}")
-        # Placeholder logic for the state execution
-        return f"Counter value: {self.counter}"
-
-    def on_exit(self):
-        print(f"Exiting state: {self.name}")
+from .states.startup_state import StartupState
+from .states.placeholder_state import State
 
 # Controller Node
 class ControllerNode(Node):
     def __init__(self):
         super().__init__('controller_node')
         self.get_logger().info("Controller Node Initialized")
+
+        # Required nodes for startup
+        self.required_nodes = ["gcode_manager"]
 
         # Current State
         self.current_state = None
@@ -60,12 +26,16 @@ class ControllerNode(Node):
         # Status Publisher
         self.status_pub = self.create_publisher(
             String, '/controller_status', 10)
-        
+
         # Log Publisher
         self.log_pub = self.create_publisher(
             String, '/controller_log', 10)
 
-        # Timer to continuously publish status
+        # State Publisher
+        self.state_pub = self.create_publisher(
+            String, '/controller_state', 10)  # New publisher for current state
+        
+        # Timer to continuously publish status and state
         self.timer = self.create_timer(1.0, self.publish_status)
 
     def command_callback(self, msg):
@@ -84,7 +54,7 @@ class ControllerNode(Node):
     def start(self):
         if self.current_state is None:
             # Start in StartupState
-            self.current_state = StartupState("STARTUP_STATE")
+            self.current_state = StartupState("STARTUP_STATE", self.required_nodes, self.get_logger())
             self.current_state.on_enter()
         self.is_paused = False
         self.get_logger().info("State machine started")
@@ -104,15 +74,25 @@ class ControllerNode(Node):
     def publish_status(self):
         status_msg = String()
         log_msg = String()
+        state_msg = String()  # New state message
+        active_nodes = self.get_node_names()  # Retrieve active nodes in the graph
+
         if self.current_state is None:
             status_msg.data = "State: NONE | Status: IDLE"
             log_msg.data = "LOG: No active state."
+            state_msg.data = "NONE"  # Publish NONE as the current state
         elif self.is_paused:
             status_msg.data = f"State: {self.current_state.name} | Status: PAUSED"
             log_msg.data = f"LOG: {self.current_state.name} paused."
+            state_msg.data = self.current_state.name  # Publish the current state name
         else:
             status_msg.data = f"State: {self.current_state.name} | Status: RUNNING"
-            result = self.current_state.execute()
+            state_msg.data = self.current_state.name  # Publish the current state name
+            if isinstance(self.current_state, StartupState):
+                result = self.current_state.execute(active_nodes)
+            else:
+                result = self.current_state.execute()
+                
             if result == "done":
                 # Transition from StartupState to Placeholder State
                 self.current_state.on_exit()
@@ -121,10 +101,14 @@ class ControllerNode(Node):
                 log_msg.data = "LOG: Transitioned to SAMPLE_STATE."
             else:
                 log_msg.data = result
+
         self.status_pub.publish(status_msg)
         self.log_pub.publish(log_msg)
+        self.state_pub.publish(state_msg)  # Publish the current state
         self.get_logger().info(f"Published Status: {status_msg.data}")
         self.get_logger().info(f"Published Log: {log_msg.data}")
+        self.get_logger().info(f"Published State: {state_msg.data}")
+
 
 def main(args=None):
     rclpy.init(args=args)

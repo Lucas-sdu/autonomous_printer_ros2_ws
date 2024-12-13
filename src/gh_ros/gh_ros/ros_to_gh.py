@@ -16,40 +16,53 @@ class ROSPublisher(Node):
         # Set up a parameter callback to monitor changes
         self.add_on_set_parameters_callback(self.set_time_callback)
 
-        # Create a publisher
+        # Publisher to Grasshopper
         self.publisher_ = self.create_publisher(String, '/ros_to_gh', 10)
+        
+        # Subscriber to Controller State Updates
+        self.subscription = self.create_subscription(
+            String,
+            '/controller_state',
+            self.state_callback,
+            10
+        )
+        
         self.counter = 0
+        self.state = None  # Default state is None
 
         # Create the initial timer
         self.create_timer_with_period(self.timer_period)
-        self.get_logger().info('ROS Publisher Node has been started (placeholder)')
+        self.get_logger().info('ROS Publisher Node has been started')
 
     def set_time_callback(self, params):
         for param in params:
-            # Look for changes to the 'set_time' parameter
             if param.name == 'set_time' and param.type_ == param.Type.DOUBLE:
-                new_timer_period = param.value  # Extract the new value
+                new_timer_period = param.value
                 if new_timer_period > 0.0 and new_timer_period != self.timer_period:
                     self.timer_period = new_timer_period
                     self.get_logger().info(f"Timer period updated to: {self.timer_period} seconds")
                     self.create_timer_with_period(self.timer_period)
                 elif new_timer_period <= 0.0:
-                    self.get_logger().warn("Invalid timer period value. It must be greater than 0.0. Keeping the previous value.")
+                    self.get_logger().warn("Invalid timer period value. Keeping the previous value.")
         return SetParametersResult(successful=True)
 
     def create_timer_with_period(self, period):
-        # Destroy the existing timer, if it exists
         if self.timer is not None:
             self.timer.destroy()
-
-        # Create a new timer with the updated period
         self.timer = self.create_timer(period, self.timer_callback)
         self.get_logger().info(f"Created a timer with period: {period}s")
+
+    def state_callback(self, msg):
+        """ Callback for receiving state updates from the controller node """
+        self.state = msg.data
+    #    self.get_logger().info(f"Updated state: {self.state}")
 
     def timer_callback(self):
         self.counter += 1
         msg = String()
-        msg.data = f'Hola Grasshopper, este es el mensaje numero: {self.counter}'
+        # Default to "none" if state is not yet set
+        state_str = self.state if self.state else "none"
+        msg.data = f'Hola_grasshopper State:{state_str} Counter:{self.counter}'
         self.publisher_.publish(msg)
         self.get_logger().info(f'Publishing: "{msg.data}"')
 

@@ -1,0 +1,19 @@
+[24.222s] Invoking command in '/home/luc/ros2_ws/build/controller': PYTHONPATH=/home/luc/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/controller/build --no-deps symlink_data
+[37.104s] running develop
+[37.109s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[37.129s]   warnings.warn(
+[46.918s] running egg_info
+[46.924s] writing controller.egg-info/PKG-INFO
+[46.941s] writing dependency_links to controller.egg-info/dependency_links.txt
+[46.943s] writing entry points to controller.egg-info/entry_points.txt
+[46.960s] writing requirements to controller.egg-info/requires.txt
+[46.979s] writing top-level names to controller.egg-info/top_level.txt
+[46.993s] reading manifest file 'controller.egg-info/SOURCES.txt'
+[47.004s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[47.034s] running build_ext
+[47.037s] Creating /home/luc/ros2_ws/install/controller/lib/python3.10/site-packages/controller.egg-link (link to .)
+[47.085s] Installing controller_node script to /home/luc/ros2_ws/install/controller/lib/controller
+[47.116s] 
+[47.130s] Installed /home/luc/ros2_ws/build/controller
+[47.149s] running symlink_data
+[53.973s] Invoked command in '/home/luc/ros2_ws/build/controller' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/controller/build --no-deps symlink_data
