@@ -1,0 +1,26 @@
+[10.764s] Invoking command in '/home/luc/ros2_ws/build/image_manager': PYTHONPATH=/home/luc/ros2_ws/build/image_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/image_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/image_manager/build --no-deps symlink_data
+[13.979s] running develop
+[14.001s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[14.002s]   warnings.warn(
+[22.420s] running egg_info
+[22.433s] creating image_manager.egg-info
+[22.445s] writing image_manager.egg-info/PKG-INFO
+[22.468s] writing dependency_links to image_manager.egg-info/dependency_links.txt
+[22.483s] writing entry points to image_manager.egg-info/entry_points.txt
+[22.492s] writing requirements to image_manager.egg-info/requires.txt
+[22.504s] writing top-level names to image_manager.egg-info/top_level.txt
+[22.517s] writing manifest file 'image_manager.egg-info/SOURCES.txt'
+[22.555s] reading manifest file 'image_manager.egg-info/SOURCES.txt'
+[22.570s] writing manifest file 'image_manager.egg-info/SOURCES.txt'
+[22.624s] running build_ext
+[22.634s] Creating /home/luc/ros2_ws/install/image_manager/lib/python3.10/site-packages/image-manager.egg-link (link to .)
+[22.678s] Installing image_manager script to /home/luc/ros2_ws/install/image_manager/lib/image_manager
+[22.695s] 
+[22.700s] Installed /home/luc/ros2_ws/build/image_manager
+[22.705s] running symlink_data
+[22.716s] creating /home/luc/ros2_ws/install/image_manager/share/ament_index
+[22.722s] creating /home/luc/ros2_ws/install/image_manager/share/ament_index/resource_index
+[22.728s] creating /home/luc/ros2_ws/install/image_manager/share/ament_index/resource_index/packages
+[22.737s] symbolically linking /home/luc/ros2_ws/build/image_manager/resource/image_manager -> /home/luc/ros2_ws/install/image_manager/share/ament_index/resource_index/packages
+[22.743s] symbolically linking /home/luc/ros2_ws/build/image_manager/package.xml -> /home/luc/ros2_ws/install/image_manager/share/image_manager
+[23.943s] Invoked command in '/home/luc/ros2_ws/build/image_manager' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/image_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/image_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/image_manager/build --no-deps symlink_data

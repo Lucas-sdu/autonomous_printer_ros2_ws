@@ -1,0 +1,19 @@
+[5.771s] Invoking command in '/home/luc/ros2_ws/build/image_manager': PYTHONPATH=/home/luc/ros2_ws/build/image_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/image_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/image_manager/build --no-deps symlink_data
+[7.757s] running develop
+[7.758s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[7.759s]   warnings.warn(
+[9.077s] running egg_info
+[9.078s] writing image_manager.egg-info/PKG-INFO
+[9.093s] writing dependency_links to image_manager.egg-info/dependency_links.txt
+[9.096s] writing entry points to image_manager.egg-info/entry_points.txt
+[9.098s] writing requirements to image_manager.egg-info/requires.txt
+[9.100s] writing top-level names to image_manager.egg-info/top_level.txt
+[9.101s] reading manifest file 'image_manager.egg-info/SOURCES.txt'
+[9.107s] writing manifest file 'image_manager.egg-info/SOURCES.txt'
+[9.118s] running build_ext
+[9.119s] Creating /home/luc/ros2_ws/install/image_manager/lib/python3.10/site-packages/image-manager.egg-link (link to .)
+[9.125s] Installing image_manager script to /home/luc/ros2_ws/install/image_manager/lib/image_manager
+[9.127s] 
+[9.127s] Installed /home/luc/ros2_ws/build/image_manager
+[9.128s] running symlink_data
+[9.319s] Invoked command in '/home/luc/ros2_ws/build/image_manager' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/image_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/image_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/image_manager/build --no-deps symlink_data

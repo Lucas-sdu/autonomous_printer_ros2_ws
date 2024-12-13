@@ -1,0 +1,26 @@
+[11.131s] Invoking command in '/home/luc/ros2_ws/build/controller': PYTHONPATH=/home/luc/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/controller/build --no-deps symlink_data
+[15.074s] running develop
+[15.085s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[15.085s]   warnings.warn(
+[18.883s] running egg_info
+[18.883s] creating controller.egg-info
+[18.884s] writing controller.egg-info/PKG-INFO
+[18.885s] writing dependency_links to controller.egg-info/dependency_links.txt
+[18.897s] writing entry points to controller.egg-info/entry_points.txt
+[18.897s] writing requirements to controller.egg-info/requires.txt
+[18.898s] writing top-level names to controller.egg-info/top_level.txt
+[18.901s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[18.935s] reading manifest file 'controller.egg-info/SOURCES.txt'
+[18.936s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[18.970s] running build_ext
+[18.978s] Creating /home/luc/ros2_ws/install/controller/lib/python3.10/site-packages/controller.egg-link (link to .)
+[18.986s] Installing controller_node script to /home/luc/ros2_ws/install/controller/lib/controller
+[18.987s] 
+[18.988s] Installed /home/luc/ros2_ws/build/controller
+[18.988s] running symlink_data
+[18.990s] creating /home/luc/ros2_ws/install/controller/share/ament_index
+[18.994s] creating /home/luc/ros2_ws/install/controller/share/ament_index/resource_index
+[18.995s] creating /home/luc/ros2_ws/install/controller/share/ament_index/resource_index/packages
+[18.997s] symbolically linking /home/luc/ros2_ws/build/controller/resource/controller -> /home/luc/ros2_ws/install/controller/share/ament_index/resource_index/packages
+[19.036s] symbolically linking /home/luc/ros2_ws/build/controller/package.xml -> /home/luc/ros2_ws/install/controller/share/controller
+[20.996s] Invoked command in '/home/luc/ros2_ws/build/controller' returned '0': PYTHONPATH=/home/luc/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/build/controller/build --no-deps symlink_data

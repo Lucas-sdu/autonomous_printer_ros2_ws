@@ -1,0 +1,3 @@
+[console_scripts]
+image_manager = image_manager.image_manager:main
+
