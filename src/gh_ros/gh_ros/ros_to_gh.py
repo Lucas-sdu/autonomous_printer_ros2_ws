@@ -6,10 +6,10 @@ from rcl_interfaces.msg import SetParametersResult
 
 class ROSPublisher(Node):
     def __init__(self):
-        super().__init__('ros_publisher')
+        super().__init__('ros_to_gh')
         
         # Declare and initialize the parameter
-        self.declare_parameter('set_time', 10.0)
+        self.declare_parameter('set_time', 4.0)
         self.timer_period = self.get_parameter('set_time').value  # Extract the initial value as a float
         self.timer = None
 
@@ -27,9 +27,16 @@ class ROSPublisher(Node):
             10
         )
         
+        # Subscriber to Controller Stage Updates
+        self.subscription = self.create_subscription(
+            String,
+            '/controller_stage',
+            self.stage_callback,
+            10
+        )
         self.counter = 0
         self.state = None  # Default state is None
-
+        self.stage = None
         # Create the initial timer
         self.create_timer_with_period(self.timer_period)
         self.get_logger().info('ROS Publisher Node has been started')
@@ -56,13 +63,16 @@ class ROSPublisher(Node):
         """ Callback for receiving state updates from the controller node """
         self.state = msg.data
     #    self.get_logger().info(f"Updated state: {self.state}")
-
+    def stage_callback(self, msg):
+        """ Callback for receiving stage updates from the controller node """
+        self.stage = msg.data
     def timer_callback(self):
         self.counter += 1
         msg = String()
         # Default to "none" if state is not yet set
         state_str = self.state if self.state else "none"
-        msg.data = f'Hola_grasshopper State:{state_str} Counter:{self.counter}'
+        stage_str = self.stage if self.stage else "none"
+        msg.data = f'Hola_grasshopper State:{state_str} Stage:{stage_str} Counter:{self.counter}'
         self.publisher_.publish(msg)
         self.get_logger().info(f'Publishing: "{msg.data}"')
 

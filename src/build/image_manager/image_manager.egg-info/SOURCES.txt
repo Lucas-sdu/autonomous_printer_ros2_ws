@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+image_manager/__init__.py
+image_manager/image_manager.py
+image_manager.egg-info/PKG-INFO
+image_manager.egg-info/SOURCES.txt
+image_manager.egg-info/dependency_links.txt
+image_manager.egg-info/entry_points.txt
+image_manager.egg-info/requires.txt
+image_manager.egg-info/top_level.txt
+image_manager.egg-info/zip-safe
+resource/image_manager

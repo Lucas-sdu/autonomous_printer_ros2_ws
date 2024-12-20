@@ -1,0 +1,20 @@
+[12.345s] Invoking command in '/home/luc/ros2_ws/src/build/controller': PYTHONPATH=/home/luc/ros2_ws/src/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/src/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/src/build/controller/build --no-deps
+[16.252s] running develop
+[16.254s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[16.255s]   warnings.warn(
+[19.303s] running egg_info
+[19.303s] creating controller.egg-info
+[19.304s] writing controller.egg-info/PKG-INFO
+[19.306s] writing dependency_links to controller.egg-info/dependency_links.txt
+[19.307s] writing entry points to controller.egg-info/entry_points.txt
+[19.308s] writing requirements to controller.egg-info/requires.txt
+[19.311s] writing top-level names to controller.egg-info/top_level.txt
+[19.316s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[19.328s] reading manifest file 'controller.egg-info/SOURCES.txt'
+[19.330s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[19.343s] running build_ext
+[19.344s] Creating /home/luc/ros2_ws/src/install/controller/lib/python3.10/site-packages/controller.egg-link (link to .)
+[19.351s] Installing controller_node script to /home/luc/ros2_ws/src/install/controller/lib/controller
+[19.353s] 
+[19.354s] Installed /home/luc/ros2_ws/src/build/controller
+[22.618s] Invoked command in '/home/luc/ros2_ws/src/build/controller' returned '0': PYTHONPATH=/home/luc/ros2_ws/src/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/src/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/src/build/controller/build --no-deps

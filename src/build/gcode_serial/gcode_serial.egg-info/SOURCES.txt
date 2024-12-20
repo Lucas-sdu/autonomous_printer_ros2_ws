@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+gcode_serial/__init__.py
+gcode_serial/gcode_manager.py
+gcode_serial/gcode_sender.py
+gcode_serial.egg-info/PKG-INFO
+gcode_serial.egg-info/SOURCES.txt
+gcode_serial.egg-info/dependency_links.txt
+gcode_serial.egg-info/entry_points.txt
+gcode_serial.egg-info/requires.txt
+gcode_serial.egg-info/top_level.txt
+gcode_serial.egg-info/zip-safe
+resource/gcode_serial

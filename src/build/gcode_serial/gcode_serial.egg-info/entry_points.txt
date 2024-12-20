@@ -1,0 +1,4 @@
+[console_scripts]
+gcode_manager = gcode_serial.gcode_manager:main
+gcode_sender = gcode_serial.gcode_sender:main
+

@@ -13,7 +13,9 @@ class GcodeManager(Node):
         # Declare parameters with default values
         self.declare_parameter('serial_port', '/dev/ttyUSB0')  # Default serial port
         self.declare_parameter('baud_rate', 115200)           # Default baud rate
-
+        
+        self.printer_status_pub = self.create_publisher(String, '/printer_status', 10)
+        self.get_logger().info("GCodeManager Node Initialized.")
         # Get parameter values
         self.serial_port = self.get_parameter('serial_port').get_parameter_value().string_value
         self.baud_rate = self.get_parameter('baud_rate').get_parameter_value().integer_value
@@ -77,6 +79,7 @@ class GcodeManager(Node):
                 response = self.serial_conn.readline().decode('utf-8').strip()
                 if response:
                     self.get_logger().info(f"Printer Response: {response}")
+                    self.publish_printer_status(response)
 
                     # If the response contains "busy", prompt for user input
                     if "busy" in response.lower():
@@ -160,6 +163,7 @@ class GcodeManager(Node):
                 response = self.serial_conn.readline().decode('utf-8').strip()
                 if response:
                     self.get_logger().info(f"Printer Response: {response}")
+                    self.publish_printer_status(response)
                     if "ok" in response.lower():
                         # Record the end time and calculate elapsed time
                         end_time = time.time()
@@ -184,6 +188,7 @@ class GcodeManager(Node):
                 response = self.serial_conn.readline().decode('utf-8').strip()
                 if response:
                     self.get_logger().info(f"Additional Printer Response: {response}")
+                    self.publish_printer_status(response)
                 else:
                     break
         except Exception as e:
@@ -191,6 +196,11 @@ class GcodeManager(Node):
 
     def display_buffer(self):
         self.get_logger().info(f"Current Buffer: {list(self.command_buffer)}")
+
+    def publish_printer_status(self, message):
+        msg = String()
+        msg.data = message
+        self.printer_status_pub.publish(msg)
 
     def destroy(self):
         if self.serial_conn and self.serial_conn.is_open:

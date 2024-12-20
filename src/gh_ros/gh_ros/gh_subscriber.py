@@ -5,7 +5,7 @@ from std_msgs.msg import String
 
 class GrasshopperSubscriber(Node):
     def __init__(self):
-        super().__init__('grasshopper_subscriber')
+        super().__init__('gh_subscriber')
 
         # Create a subscription to the '/grasshopper_input' topic
         self.subscription = self.create_subscription(

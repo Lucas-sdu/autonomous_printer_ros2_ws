@@ -7,7 +7,7 @@ from sensor_msgs.msg import CompressedImage
 
 class ImageManagerNode(Node):
     def __init__(self):
-        super().__init__('image_manager_node')
+        super().__init__('image_manager')
 
         # Publisher for /image_trigger (sending commands)
         self.trigger_publisher = self.create_publisher(String, '/image_trigger', 10)

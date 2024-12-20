@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+gh_ros/__init__.py
+gh_ros/gh_subscriber.py
+gh_ros/ros_to_gh.py
+gh_ros.egg-info/PKG-INFO
+gh_ros.egg-info/SOURCES.txt
+gh_ros.egg-info/dependency_links.txt
+gh_ros.egg-info/entry_points.txt
+gh_ros.egg-info/requires.txt
+gh_ros.egg-info/top_level.txt
+gh_ros.egg-info/zip-safe
+resource/gh_ros

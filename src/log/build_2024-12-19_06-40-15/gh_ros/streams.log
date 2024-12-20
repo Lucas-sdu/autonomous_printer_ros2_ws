@@ -1,0 +1,27 @@
+[12.402s] Invoking command in '/home/luc/ros2_ws/src/build/gh_ros': PYTHONPATH=/home/luc/ros2_ws/src/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/src/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/src/build/gh_ros/build --no-deps symlink_data
+[16.814s] running develop
+[16.816s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[16.817s]   warnings.warn(
+[20.010s] running egg_info
+[20.011s] creating gh_ros.egg-info
+[20.012s] writing gh_ros.egg-info/PKG-INFO
+[20.022s] writing dependency_links to gh_ros.egg-info/dependency_links.txt
+[20.024s] writing entry points to gh_ros.egg-info/entry_points.txt
+[20.028s] writing requirements to gh_ros.egg-info/requires.txt
+[20.029s] writing top-level names to gh_ros.egg-info/top_level.txt
+[20.033s] writing manifest file 'gh_ros.egg-info/SOURCES.txt'
+[20.056s] reading manifest file 'gh_ros.egg-info/SOURCES.txt'
+[20.069s] writing manifest file 'gh_ros.egg-info/SOURCES.txt'
+[20.125s] running build_ext
+[20.126s] Creating /home/luc/ros2_ws/src/install/gh_ros/lib/python3.10/site-packages/gh-ros.egg-link (link to .)
+[20.127s] Installing gh_subscriber script to /home/luc/ros2_ws/src/install/gh_ros/lib/gh_ros
+[20.131s] Installing ros_to_gh script to /home/luc/ros2_ws/src/install/gh_ros/lib/gh_ros
+[20.134s] 
+[20.141s] Installed /home/luc/ros2_ws/src/build/gh_ros
+[20.143s] running symlink_data
+[20.152s] creating /home/luc/ros2_ws/src/install/gh_ros/share/ament_index
+[20.154s] creating /home/luc/ros2_ws/src/install/gh_ros/share/ament_index/resource_index
+[20.172s] creating /home/luc/ros2_ws/src/install/gh_ros/share/ament_index/resource_index/packages
+[20.175s] symbolically linking /home/luc/ros2_ws/src/build/gh_ros/resource/gh_ros -> /home/luc/ros2_ws/src/install/gh_ros/share/ament_index/resource_index/packages
+[20.176s] symbolically linking /home/luc/ros2_ws/src/build/gh_ros/package.xml -> /home/luc/ros2_ws/src/install/gh_ros/share/gh_ros
+[22.690s] Invoked command in '/home/luc/ros2_ws/src/build/gh_ros' returned '0': PYTHONPATH=/home/luc/ros2_ws/src/build/gh_ros/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/luc/ros2_ws/src/install/gh_ros/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/luc/ros2_ws/src/build/gh_ros/build --no-deps symlink_data

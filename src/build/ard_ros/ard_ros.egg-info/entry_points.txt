@@ -1,0 +1,3 @@
+[console_scripts]
+serial_comm = ard_ros.serial_comm:main
+

@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating gcode_serial.egg-info
+writing gcode_serial.egg-info/PKG-INFO
+writing dependency_links to gcode_serial.egg-info/dependency_links.txt
+writing entry points to gcode_serial.egg-info/entry_points.txt
+writing requirements to gcode_serial.egg-info/requires.txt
+writing top-level names to gcode_serial.egg-info/top_level.txt
+writing manifest file 'gcode_serial.egg-info/SOURCES.txt'
+reading manifest file 'gcode_serial.egg-info/SOURCES.txt'
+writing manifest file 'gcode_serial.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/luc/ros2_ws/src/install/gcode_serial/lib/python3.10/site-packages/gcode-serial.egg-link (link to .)
+Installing gcode_manager script to /home/luc/ros2_ws/src/install/gcode_serial/lib/gcode_serial
+Installing gcode_sender script to /home/luc/ros2_ws/src/install/gcode_serial/lib/gcode_serial
+
+Installed /home/luc/ros2_ws/src/build/gcode_serial
+running symlink_data
+creating /home/luc/ros2_ws/src/install/gcode_serial/share/ament_index
+creating /home/luc/ros2_ws/src/install/gcode_serial/share/ament_index/resource_index
+creating /home/luc/ros2_ws/src/install/gcode_serial/share/ament_index/resource_index/packages
+symbolically linking /home/luc/ros2_ws/src/build/gcode_serial/resource/gcode_serial -> /home/luc/ros2_ws/src/install/gcode_serial/share/ament_index/resource_index/packages
+symbolically linking /home/luc/ros2_ws/src/build/gcode_serial/package.xml -> /home/luc/ros2_ws/src/install/gcode_serial/share/gcode_serial
