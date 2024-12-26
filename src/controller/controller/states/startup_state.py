@@ -19,12 +19,15 @@ class StartupState:
         self.checked_nodes = []
         self.logger.info(f"Entering state: {self.name}. Checking for required nodes...")
         
-    def execute(self, active_nodes):
+    def execute(self):
         """
         Check if all required nodes are running and confirm connection.
+        Access active nodes directly from the parent node.
         """
+        # Access the active nodes directly from the parent node
+        active_nodes = self.node.get_node_names()  # Retrieve active nodes in the ROS graph
         self.counter += 1
-        self.publish_stage() 
+        self.publish_stage()
         # Stage 1: Start all required nodes
         if self.stage == 1:
             missing_nodes = []

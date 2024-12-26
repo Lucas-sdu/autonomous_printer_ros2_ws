@@ -5,23 +5,60 @@ ros2 run gh_ros gh_subscriber
 
 //Run octoprint
 ~/OctoPrint/venv/bin/octoprint serve
-M105
-//serial gcode sender node
+
+//Autonomous Master control node
+ros2 run controller controller_node
+
+  //Send user commands:
+  	Command list: start | pause | reset
+  ros2 topic pub /user_command std_msgs/msg/String "data: 'reset'" --once
+  ros2 topic pub /user_command std_msgs/msg/String "data: 'start'" --once
+
+  // GO TO SPECIFIC STATE STARTUP_STATE | SCAN_STATE | SAMPLE_STATE
+  ros2 topic pub /user_command std_msgs/msg/String "data: 'goto STARTUP_STATE'" --once
+//Gh serial gcode sender node
  ros2 run gcode_serial gcode_sender --ros-args -p serial_port:=/dev/ttyACM0 -p baud_rate:=115200
 
-//serial gcode manager node
+//Gh serial gcode manager node
 ros2 run gcode_serial gcode_manager --ros-args -p serial_port:=/dev/ttyACM0 -p baud_rate:=115200
 
-//Send Commands
+//ros_to_grasshopper
+ros2 run gh_ros ros_to_gh
+  //To set timer frequency:
+	ros2 param set /ros_to_gh set_time 2.0
+
+//Arduino to Ros
+ros2 run ard_ros serial_comm
+
+//Image_manager topics node
+ros2 run image_manager image_manager
+
+//Send Commands (with single gcode command node)
 ros2 topic pub --once /gcode_command std_msgs/String "data: 'G28'"
 ros2 topic pub --once /gcode_command std_msgs/String "data: 'G1 X250 Y110 F5200'"
 
+//Send single msg to a topic
+ros2 topic pub --once /grasshopper_input std_msgs/String '{"data": "G28"}'
 
+//Check Raspberry IP:
+hostname -I
 
 //STARTUP NODE ORDER
-
+// To test for plugged usb port use command: ls /dev/ttyUSB* /dev/ttyACM*
 ros2 run gcode_serial gcode_manager --ros-args -p serial_port:=/dev/ttyACM0 -p baud_rate:=115200
  (Then prepare printer and enter on the node)
 ros2 run gh_ros gh_subscriber
+ros2 run gh_ros ros_to_gh  
 ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+
+//(It may be necessary to start rosbridge BEFORE ros_to_gh
+
+//Also for startup you can run instead inside ros2_ws directory:
+./launch_nodes.sh
+
+//To compile the ino file for Arduino  You must be in the ros2_ws folder where the arduino folder is
+arduino-cli compile --fqbn arduino:avr:nano echo_test
+//To burn with the old bootloader
+arduino-cli upload -p /dev/ttyUSB0 --fqbn arduino:avr:nano:cpu=atmega328old echo_test
+
 

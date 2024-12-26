@@ -1,25 +1,26 @@
 #!/usr/bin/env python3
-
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
+import threading
+import sys
 from .states.startup_state import StartupState
 from .states.scan_state import ScanState
 from .states.placeholder_state import State
 
-# Controller Node
 class ControllerNode(Node):
     def __init__(self):
         super().__init__('controller_node')
         self.get_logger().info("Controller Node Initialized")
 
         # Shared message store
-        self.shared_data = {"grasshopper_input": None, "printer_status": None} 
-        #Check gh connection
-        self.connected_to_grasshopper = False
+        self.shared_data = {"grasshopper_input": None, "printer_status": None, "image_manager_input": None}
         
+        # Check Grasshopper connection
+        self.connected_to_grasshopper = False
+
         # Required nodes for startup
-        self.required_nodes = ["gcode_manager", "ros_to_gh","gh_subscriber","rosbridge_websocket","image_manager"]
+        self.required_nodes = ["gcode_manager", "ros_to_gh", "gh_subscriber", "rosbridge_websocket", "image_manager"]
 
         # Current State
         self.current_state = None
@@ -28,23 +29,20 @@ class ControllerNode(Node):
         # User Command Subscriber
         self.command_sub = self.create_subscription(
             String, '/user_command', self.command_callback, 10)
-        
+
         # Status Publisher
         self.status_pub = self.create_publisher(
             String, '/controller_status', 10)
-
 
         # Log Publisher
         self.log_pub = self.create_publisher(
             String, '/controller_log', 10)
 
         # State Publisher
-        self.state_pub = self.create_publisher(String, '/controller_state', 10)  
+        self.state_pub = self.create_publisher(String, '/controller_state', 10)
 
-        
-        
-        #Stage Publisher
-        self.stage_pub = self.create_publisher(String, '/controller_stage', 10)  
+        # Stage Publisher
+        self.stage_pub = self.create_publisher(String, '/controller_stage', 10)
         self.publish_none_stage()  # Publish NONE stage only at startup
 
         # Timer to continuously publish status and state
@@ -59,15 +57,27 @@ class ControllerNode(Node):
         )
         self.printer_status_sub = self.create_subscription(
             String, '/printer_status', self.printer_status_callback, 10)
-        
+
+        self.image_manager_sub = self.create_subscription(String, '/image_input', self.image_manager_callback, 10)
+
+        # Start the input listener thread
+        self.listen_for_input()
+
+    def image_manager_callback(self, msg):
+        """Store messages from the image_manager in shared data."""
+        self.shared_data["image_manager_input"] = msg.data
+        self.get_logger().info(f"Received message on '/image_input': {msg.data}")
+
     def grasshopper_callback(self, msg):
         """Store messages from Grasshopper in shared data"""
         self.shared_data["grasshopper_input"] = msg.data
         self.get_logger().info(f"Received message on '/grasshopper_input': {msg.data}")
+
     def printer_status_callback(self, msg):
         """Store Printer OK response in shared data."""
         self.shared_data["printer_status"] = msg.data
         self.get_logger().info(f"Received printer status: {msg.data}")
+
     def command_callback(self, msg):
         command = msg.data.lower()
         self.get_logger().info(f"Received command: {command}")
@@ -76,10 +86,12 @@ class ControllerNode(Node):
             self.start()
         elif command == 'pause':
             self.pause()
-        elif command == 'reset':
-            self.reset()
+        elif command.startswith('goto '):
+            target_state_name = command.split(' ', 1)[1].upper()
+            self.goto_state(target_state_name)
         else:
             self.get_logger().info(f"Unknown command: {command}")
+
     def publish_none_stage(self):
         """Publish 'State: NONE | Stage: NONE' to indicate initial startup."""
         stage_msg = String()
@@ -102,14 +114,6 @@ class ControllerNode(Node):
             self.is_paused = True
             self.get_logger().info("State machine paused")
 
-    def reset(self):
-        if self.current_state is not None:
-            self.current_state.on_exit()
-        self.current_state = None
-        self.is_paused = False
-        self.publish_none_stage()
-        self.get_logger().info("State machine reset")
-
     def publish_status(self):
         status_msg = String()
         log_msg = String()
@@ -125,20 +129,16 @@ class ControllerNode(Node):
             # Retrieve the stage from the current state
             stage = getattr(self.current_state, 'stage', "N/A")
 
-
             if self.is_paused:
                 status_msg.data = f"State: {self.current_state.name} | Stage: {stage} | Status: PAUSED"
                 log_msg.data = f"LOG: {self.current_state.name} paused."
             else:
                 status_msg.data = f"State: {self.current_state.name} | Stage: {stage} | Status: RUNNING"
-                if isinstance(self.current_state, StartupState):
-                    result = self.current_state.execute(active_nodes)
-                else:
-                    result = self.current_state.execute()
+                result = self.current_state.execute()
 
                 if result == "done":
                     self.current_state.on_exit()
-                    self.current_state = ScanState("SCAN_STATE")
+                    self.current_state = ScanState("SCAN_STATE", self.required_nodes, self.get_logger(), self, self.stage_pub)
                     self.current_state.on_enter()
                     self.get_logger().info("Transitioning to SCAN_STATE.")
 
@@ -156,7 +156,6 @@ class ControllerNode(Node):
                 else:
                     log_msg.data = result
 
-
             state_msg.data = self.current_state.name
 
         # Publish the messages
@@ -166,7 +165,59 @@ class ControllerNode(Node):
         self.get_logger().info(f"Published Status: {status_msg.data}")
         self.get_logger().info(f"Published Log: {log_msg.data}")
 
+    def goto_state(self, target_state_name):
+        """Forcefully transition to a specified state, resetting the stage."""
+        state_mapping = {
+            "STARTUP_STATE": StartupState,
+            "SCAN_STATE": ScanState,
+            "SAMPLE_STATE": State,  # Example of another state
+        }
 
+        # Check if the target state exists in the mapping
+        if target_state_name not in state_mapping:
+            self.get_logger().error(f"Invalid state: {target_state_name}")
+            return
+
+        # Exit the current state if it exists
+        if self.current_state is not None:
+            self.current_state.on_exit()
+            self.get_logger().info(f"Exiting current state: {self.current_state.name}")
+
+        # Instantiate the new state
+        new_state_class = state_mapping[target_state_name]
+        if target_state_name == "STARTUP_STATE":
+            self.current_state = new_state_class(target_state_name, self.required_nodes, self.get_logger(), self, self.stage_pub)
+        elif target_state_name == "SCAN_STATE":
+            self.current_state = new_state_class(target_state_name, self.required_nodes, self.get_logger(), self, self.stage_pub)
+        else:
+            self.current_state = new_state_class(target_state_name)
+
+        # Reset the stage and enter the new state
+        self.current_state.stage = 1
+        self.current_state.on_enter()
+        self.get_logger().info(f"Transitioned to {target_state_name} with stage reset to 1")
+
+        # Publish the initial stage
+        self.publish_status()
+        self.publish_none_stage()
+
+    def listen_for_input(self):
+        """Listen for user input in the terminal and handle commands."""
+        def input_thread():
+            while True:
+                user_input = input("Press Enter to start when in NONE state, or type commands: ").strip()
+                if user_input == "" and self.current_state is None:
+                    self.start()
+                elif user_input.startswith("goto "):
+                    target_state_name = user_input.split(" ", 1)[1].upper()
+                    self.goto_state(target_state_name)
+                elif user_input == "pause":
+                    self.pause()
+                else:
+                    self.get_logger().info(f"Unknown command: {user_input}")
+
+        thread = threading.Thread(target=input_thread, daemon=True)
+        thread.start()
 
 
 def main(args=None):
@@ -179,6 +230,3 @@ def main(args=None):
     finally:
         controller_node.destroy_node()
         rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
