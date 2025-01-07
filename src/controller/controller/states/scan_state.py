@@ -21,7 +21,7 @@ class ScanState:
         self.publish_stage() 
         if self.stage == 1:
             elapsed_time = time.time() - self.start_time
-            if elapsed_time >= 25:
+            if elapsed_time >= 8:
                 self.logger.info("Stage 1 Complete: All nodes are running.")
                 
                 self.stage += 1  # Move to Stage 2
@@ -29,16 +29,17 @@ class ScanState:
         
         # Stage 2: Check for 'Received image' from image_manager
         elif self.stage == 2:
-            self.publish_stage() 
-            image_manager_input = self.node.shared_data.get("image_manager_input")
-            if image_manager_input and "Received image" in image_manager_input:
+            self.publish_stage()
+            image_received = self.node.shared_data.get("image_input")
+            
+            if image_received:  # Check if an image has been marked as received
                 self.node.get_logger().info("Stage 2 Complete: Image received.")
-    
-
-                self.stage += 1  # Move to Stage 3
+                self.stage += 1  # Move to the next stage
+                self.node.shared_data["image_input"] = False  # Reset the flag
                 return "waiting"
-
-            return "waiting"
+            
+            self.node.get_logger().info("Stage 2: Waiting for image input...")
+            return "waiteanding"
 
         # Stage 3: Wait for 'DONE' message from Grasshopper
         elif self.stage == 3:
@@ -46,7 +47,7 @@ class ScanState:
             grasshopper_input = self.node.shared_data.get("grasshopper_input")
             if grasshopper_input and "DONE" in grasshopper_input:
                 self.node.get_logger().info("Stage 3 Complete: 'DONE' message received from Grasshopper.")
-                return "done"  # Signal to move to the next state
+                return "SCAN_DONE"  # Signal to move to the next state
             return "waiting"
 
     def on_exit(self):

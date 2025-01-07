@@ -7,6 +7,9 @@ import sys
 from .states.startup_state import StartupState
 from .states.scan_state import ScanState
 from .states.placeholder_state import State
+from .states.print_state import PrintState
+
+from sensor_msgs.msg import CompressedImage
 
 class ControllerNode(Node):
     def __init__(self):
@@ -50,23 +53,22 @@ class ControllerNode(Node):
 
         # Add the subscriber to listen for Grasshopper messages
         self.grasshopper_sub = self.create_subscription(
-            String,
-            '/grasshopper_input',
-            self.grasshopper_callback,
-            10
-        )
+            String,'/grasshopper_input',self.grasshopper_callback,10)
+
         self.printer_status_sub = self.create_subscription(
             String, '/printer_status', self.printer_status_callback, 10)
 
-        self.image_manager_sub = self.create_subscription(String, '/image_input', self.image_manager_callback, 10)
+        self.image_manager_sub = self.create_subscription(
+            CompressedImage, '/image_input', self.image_manager_callback, 10)
+
 
         # Start the input listener thread
         self.listen_for_input()
 
     def image_manager_callback(self, msg):
-        """Store messages from the image_manager in shared data."""
-        self.shared_data["image_manager_input"] = msg.data
-        self.get_logger().info(f"Received message on '/image_input': {msg.data}")
+        """Callback to handle received images from /image_input."""
+        self.shared_data["image_input"] = True  # Just mark as received
+        self.get_logger().info("Image received on /image_input.")  # Log receipt
 
     def grasshopper_callback(self, msg):
         """Store messages from Grasshopper in shared data"""
@@ -142,6 +144,12 @@ class ControllerNode(Node):
                     self.current_state.on_enter()
                     self.get_logger().info("Transitioning to SCAN_STATE.")
 
+                elif result == "SCAN_DONE":  # Transition to SAMPLE_STATE
+                    self.current_state.on_exit()
+                    self.current_state = State("SAMPLE_STATE")
+                    self.current_state.on_enter()
+                    self.get_logger().info("Transitioning to SAMPLE_STATE.")
+
                 elif result == "samplestate":  # Transition to SAMPLE_STATE
                     self.current_state.on_exit()
                     self.current_state = State("SAMPLE_STATE")
@@ -170,7 +178,8 @@ class ControllerNode(Node):
         state_mapping = {
             "STARTUP_STATE": StartupState,
             "SCAN_STATE": ScanState,
-            "SAMPLE_STATE": State,  # Example of another state
+            "PRINT_STATE": PrintState,
+            "SAMPLE_STATE": State, 
         }
 
         # Check if the target state exists in the mapping
@@ -185,12 +194,11 @@ class ControllerNode(Node):
 
         # Instantiate the new state
         new_state_class = state_mapping[target_state_name]
-        if target_state_name == "STARTUP_STATE":
-            self.current_state = new_state_class(target_state_name, self.required_nodes, self.get_logger(), self, self.stage_pub)
-        elif target_state_name == "SCAN_STATE":
+        if target_state_name in ["STARTUP_STATE", "SCAN_STATE", "PRINT_STATE"]:
             self.current_state = new_state_class(target_state_name, self.required_nodes, self.get_logger(), self, self.stage_pub)
         else:
             self.current_state = new_state_class(target_state_name)
+
 
         # Reset the stage and enter the new state
         self.current_state.stage = 1
