@@ -21,7 +21,7 @@ class ScanState:
         self.publish_stage() 
         if self.stage == 1:
             elapsed_time = time.time() - self.start_time
-            if elapsed_time >= 8:
+            if elapsed_time >= 15:
                 self.logger.info("Stage 1 Complete: All nodes are running.")
                 
                 self.stage += 1  # Move to Stage 2

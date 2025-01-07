@@ -4,6 +4,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 import threading
 import sys
+import re
 from .states.startup_state import StartupState
 from .states.scan_state import ScanState
 from .states.placeholder_state import State
@@ -75,10 +76,34 @@ class ControllerNode(Node):
         self.shared_data["grasshopper_input"] = msg.data
         self.get_logger().info(f"Received message on '/grasshopper_input': {msg.data}")
 
+
+
+
+
     def printer_status_callback(self, msg):
-        """Store Printer OK response in shared data."""
         self.shared_data["printer_status"] = msg.data
-        self.get_logger().info(f"Received printer status: {msg.data}")
+
+        # Parse M114 response format
+        if "Count" in msg.data:
+            try:
+                # Extract the portion after "Count"
+                count_section = msg.data.split("Count")[-1].strip()
+
+                # Use regex to extract numerical values for X, Y, Z
+                match = re.search(r"X:\s*(-?\d+(\.\d+)?)\s+Y:(-?\d+(\.\d+)?)\s+Z:(-?\d+(\.\d+)?)", count_section)
+                if match:
+                    position = {
+                        "X": float(match.group(1)),  # Group 1 matches X value
+                        "Y": float(match.group(3)),  # Group 3 matches Y value
+                        "Z": float(match.group(5)),  # Group 5 matches Z value
+                    }
+                    self.shared_data["last_actual_position"] = position
+                    self.get_logger().info(f"Updated last_actual_position: {position}")
+                else:
+                    self.get_logger().warning(f"No valid position found in Count section: {count_section}")
+            except Exception as e:
+                self.get_logger().warning(f"Failed to parse M114 response: {msg.data} ({e})")
+
 
     def command_callback(self, msg):
         command = msg.data.lower()
@@ -145,6 +170,12 @@ class ControllerNode(Node):
                     self.get_logger().info("Transitioning to SCAN_STATE.")
 
                 elif result == "SCAN_DONE":  # Transition to SAMPLE_STATE
+                    self.current_state.on_exit()
+                    self.current_state = PrintState("PRINT_STATE", self.required_nodes, self.get_logger(), self, self.stage_pub)
+                    self.current_state.on_enter()
+                    self.get_logger().info("Transitioning to PRINT_STATE.")
+
+                elif result == "PRINT_CYCLE_DONE":  # Transition to SAMPLE_STATE
                     self.current_state.on_exit()
                     self.current_state = State("SAMPLE_STATE")
                     self.current_state.on_enter()
