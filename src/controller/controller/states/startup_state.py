@@ -18,7 +18,9 @@ class StartupState:
         self.counter = 0
         self.checked_nodes = []
         self.logger.info(f"Entering state: {self.name}. Checking for required nodes...")
-        
+        self.node.print_cycles = 0  # Reset print cycles counter
+        self.node.publish_print_cycles()  # Publish the reset value
+        self.logger.info("StartupState: Reset print cycles to 0.")
     def execute(self):
         """
         Check if all required nodes are running and confirm connection.

@@ -20,6 +20,9 @@ class ControllerNode(Node):
         # Shared message store
         self.shared_data = {"grasshopper_input": None, "printer_status": None, "image_manager_input": None}
         
+        ## Counter for print cycles
+        self.print_cycles = 0  
+
         # Check Grasshopper connection
         self.connected_to_grasshopper = False
 
@@ -42,12 +45,16 @@ class ControllerNode(Node):
         self.log_pub = self.create_publisher(
             String, '/controller_log', 10)
 
+        
         # State Publisher
         self.state_pub = self.create_publisher(String, '/controller_state', 10)
 
         # Stage Publisher
         self.stage_pub = self.create_publisher(String, '/controller_stage', 10)
         self.publish_none_stage()  # Publish NONE stage only at startup
+
+        # Print Cycle publisher
+        self.print_cycles_pub = self.create_publisher(String, '/print_cycles', 10)
 
         # Timer to continuously publish status and state
         self.timer = self.create_timer(1.0, self.publish_status)
@@ -76,9 +83,12 @@ class ControllerNode(Node):
         self.shared_data["grasshopper_input"] = msg.data
         self.get_logger().info(f"Received message on '/grasshopper_input': {msg.data}")
 
-
-
-
+    def publish_print_cycles(self):
+        """Publish the current print cycle count."""
+        print_cycles_msg = String()
+        print_cycles_msg.data = str(self.print_cycles)
+        self.print_cycles_pub.publish(print_cycles_msg)
+        self.get_logger().info(f"Published Print Cycles: {self.print_cycles}")
 
     def printer_status_callback(self, msg):
         self.shared_data["printer_status"] = msg.data
@@ -116,6 +126,16 @@ class ControllerNode(Node):
         elif command.startswith('goto '):
             target_state_name = command.split(' ', 1)[1].upper()
             self.goto_state(target_state_name)
+        elif command.startswith("SET_CYCLE:"):
+            try:
+                # Extract the value after "SET_CYCLE:"
+                new_cycle_count = int(command.split(":")[1].strip())
+                self.print_cycles = new_cycle_count
+                self.publish_print_cycles()
+                self.get_logger().info(f"Print cycles updated via user command to: {self.print_cycles}")
+            except (ValueError, IndexError):
+                self.get_logger().warning(f"Invalid SET_CYCLE command: {command}")
+        
         else:
             self.get_logger().info(f"Unknown command: {command}")
 
@@ -167,6 +187,8 @@ class ControllerNode(Node):
                     self.current_state.on_exit()
                     self.current_state = ScanState("SCAN_STATE", self.required_nodes, self.get_logger(), self, self.stage_pub)
                     self.current_state.on_enter()
+                    self.print_cycles = 0 # Reset print cycle count
+                    self.publish_print_cycles()  # Publish updated count
                     self.get_logger().info("Transitioning to SCAN_STATE.")
 
                 elif result == "SCAN_DONE":  # Transition to SAMPLE_STATE
@@ -177,9 +199,11 @@ class ControllerNode(Node):
 
                 elif result == "PRINT_CYCLE_DONE":  # Transition to SAMPLE_STATE
                     self.current_state.on_exit()
-                    self.current_state = State("SAMPLE_STATE")
+                    self.current_state = ScanState("SCAN_STATE", self.required_nodes, self.get_logger(), self, self.stage_pub)
                     self.current_state.on_enter()
-                    self.get_logger().info("Transitioning to SAMPLE_STATE.")
+                    self.get_logger().info("Transitioning to SCAN_STATE.")
+                    self.print_cycles += 1  # Increment print cycle count
+                    self.publish_print_cycles()  # Publish updated count
 
                 elif result == "samplestate":  # Transition to SAMPLE_STATE
                     self.current_state.on_exit()

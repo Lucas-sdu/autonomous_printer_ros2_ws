@@ -22,7 +22,7 @@ class PrintState:
     def on_enter(self):
         self.logger.info(f"Entering state: {self.name}")
         self.logger.info("Stage 1: Waiting for Grasshopper to send 'PRINT_DONE'.")
-
+        self.stage = 1  # Reset the stage to 1
     def execute(self):
         self.publish_stage()
 
@@ -80,7 +80,8 @@ class PrintState:
 
     def on_exit(self):
         self.logger.info(f"Exiting state: {self.name}")
-
+        self.stage = 0  # Reset the stage to 0
+        self.publish_stage() 
     def publish_stage(self):
         """Publish the current stage."""
         stage_msg = String()

@@ -16,7 +16,8 @@ class ScanState:
         print(f"Entering state: {self.name}")
         print("Stage 1: Waiting for Grasshopper to move to scan position...")
         self.start_time = time.time()  # Record start time
-
+        self.stage = 1  # Reset the stage to 1
+        self.publish_stage() 
     def execute(self):
         self.publish_stage() 
         if self.stage == 1:
@@ -52,7 +53,8 @@ class ScanState:
 
     def on_exit(self):
         print(f"Exiting state: {self.name}")
-
+        self.stage = 0  # Reset the stage to 0
+        self.publish_stage() 
     def publish_stage(self):
         """Publish the current state and stage."""
         stage_msg = String()

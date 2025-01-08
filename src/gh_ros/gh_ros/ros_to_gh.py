@@ -34,9 +34,19 @@ class ROSPublisher(Node):
             self.stage_callback,
             10
         )
+
+        # Subscriber to Controller Print cycle updates
+        self.subscription = self.create_subscription(
+            String,
+            '/print_cycles',
+            self.cycle_callback,
+            10
+        )
+        
         self.counter = 0
         self.state = None  # Default state is None
         self.stage = None
+        self.cycle = None
         # Create the initial timer
         self.create_timer_with_period(self.timer_period)
         self.get_logger().info('ROS Publisher Node has been started')
@@ -66,13 +76,17 @@ class ROSPublisher(Node):
     def stage_callback(self, msg):
         """ Callback for receiving stage updates from the controller node """
         self.stage = msg.data
+    def cycle_callback(self, msg):
+        """ Callback for receiving stage updates from the controller node """
+        self.cycle = msg.data
     def timer_callback(self):
         self.counter += 1
         msg = String()
         # Default to "none" if state is not yet set
         state_str = self.state if self.state else "none"
         stage_str = self.stage if self.stage else "none"
-        msg.data = f'Hola_grasshopper State:{state_str} Stage:{stage_str} Counter:{self.counter}'
+        cycle_str = self.cycle if self.cycle else "none"
+        msg.data = f'Hola_grasshopper State:{state_str} Stage:{stage_str} Cycle:{cycle_str} Counter:{self.counter}'
         self.publisher_.publish(msg)
         self.get_logger().info(f'Publishing: "{msg.data}"')
 

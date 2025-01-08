@@ -13,6 +13,7 @@ ros2 run controller controller_node
   	Command list: start | pause | reset
   ros2 topic pub /user_command std_msgs/msg/String "data: 'reset'" --once
   ros2 topic pub /user_command std_msgs/msg/String "data: 'start'" --once
+  ros2 topic pub /user_command std_msgs/msg/String "{data: 'SET_CYCLE:5'}" --once
 
   // GO TO SPECIFIC STATE STARTUP_STATE | SCAN_STATE | SAMPLE_STATE
   ros2 topic pub /user_command std_msgs/msg/String "data: 'goto STARTUP_STATE'" --once
