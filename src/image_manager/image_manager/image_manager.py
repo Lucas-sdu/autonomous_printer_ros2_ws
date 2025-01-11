@@ -4,6 +4,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 from sensor_msgs.msg import CompressedImage
+from datetime import datetime  # Import datetime
 
 class ImageManagerNode(Node):
     def __init__(self):
@@ -24,8 +25,8 @@ class ImageManagerNode(Node):
 
     def image_callback(self, msg):
         """Callback for handling incoming images on /image_input."""
-        self.get_logger().info(f"Received image on /image_input with format: {msg.format}")
-
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # Get current time
+        self.get_logger().info(f"[{timestamp}] Received image on /image_input with format: {msg.format}")
 def main(args=None):
     rclpy.init(args=args)
     node = ImageManagerNode()

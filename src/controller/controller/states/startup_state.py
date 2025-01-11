@@ -21,6 +21,8 @@ class StartupState:
         self.node.print_cycles = 0  # Reset print cycles counter
         self.node.publish_print_cycles()  # Publish the reset value
         self.logger.info("StartupState: Reset print cycles to 0.")
+        self.node.shared_data["image_input"] = False  # Reset the flag
+        self.node.shared_data["last_actual_position"] = None
     def execute(self):
         """
         Check if all required nodes are running and confirm connection.
