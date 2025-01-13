@@ -20,7 +20,9 @@ class ScanState:
         self.start_time = time.time()  # Record start time
         self.logger.info("Stage 1: Preparing to check position.")
         self.stage = 1
-        self.stage = 1  # Reset the stage to 1
+
+        # Reset last_actual_position to None
+        self.node.shared_data["last_actual_position"] = None
         grasshopper_input = String()
         grasshopper_input.data = "M114"
         self.grasshopper_input_pub.publish(grasshopper_input)
@@ -59,32 +61,51 @@ class ScanState:
             self.logger.info(f"Stage 1: Waiting for position response... {elapsed_time:.2f} seconds elapsed.")
             return "waiting"
         
-        # Stage 2: Check for 'Received image' from image_manager
+        # Stage 2: Wait for 'IMG_DONE' message from Grasshopper
         elif self.stage == 2:
             self.publish_stage()
-            image_received = self.node.shared_data.get("image_input")
-            
-            if image_received:  # Check if an image has been marked as received
-                self.node.get_logger().info("Stage 2 Complete: Image received.")
-                self.stage += 1  # Move to the next stage
-                self.node.shared_data["image_input"] = False  # Reset the flag
-                return "waiting"
-            
-            self.node.get_logger().info("Stage 2: Waiting for image input...")
-            return "waiteanding"
 
-        # Stage 3: Wait for 'DONE' message from Grasshopper
-        elif self.stage == 3:
-            self.publish_stage() 
+            # Check for 'IMG_DONE' in Grasshopper input
             grasshopper_input = self.node.shared_data.get("grasshopper_input")
+            
+            if grasshopper_input and "IMG_DONE" in grasshopper_input:
+                self.node.get_logger().info("Stage 2 Complete: 'IMG_DONE' message received from Grasshopper.")
+                self.node.shared_data["grasshopper_input"] = None  
+                self.stage += 1  # Move to the next stage
+                
+                return "waiting"
+
+            # Default: keep waiting
+            self.node.get_logger().info("Stage 2: Waiting for 'IMG_DONE' from Grasshopper...")
+            return "waiting"
+
+        # Stage 3: Wait for 'DONE' message from Grasshopper and user to press Enter
+        elif self.stage == 3:
+            self.publish_stage()
+
+            # Check for Grasshopper input
+            grasshopper_input = self.node.shared_data.get("grasshopper_input")
+            
             if grasshopper_input and "DONE" in grasshopper_input:
-                self.node.get_logger().info("Stage 3 Complete: 'DONE' message received from Grasshopper.")
-                return "SCAN_DONE"  # Signal to move to the next state
+                self.node.get_logger().info("Stage 3: 'DONE' message received from Grasshopper. PRESS ENTER")
+                
+                # Now wait for Enter from the terminal
+                try:
+                    user_input = input("Presiona Enter para confirmar y continuar: ").strip()
+                    if user_input == "":
+                        self.node.get_logger().info("Stage 3 Complete: Both Grasshopper 'DONE' and Enter confirmed.")
+                        return "SCAN_DONE"  # Signal to move to the next state
+                except EOFError:
+                    self.node.get_logger().warn("Stage 3: No input available in terminal for Enter confirmation.")
+            
+            # Default: keep waiting
+            self.node.get_logger().info("Stage 3: Waiting for 'DONE' from Grasshopper and Enter in terminal...")
             return "waiting"
 
     def on_exit(self):
         print(f"Exiting state: {self.name}")
         self.stage = 0  # Reset the stage to 0
+        self.node.shared_data["last_actual_position"] = None  
         self.publish_stage() 
     def publish_stage(self):
         """Publish the current state and stage."""

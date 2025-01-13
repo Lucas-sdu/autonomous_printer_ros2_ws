@@ -16,7 +16,7 @@ class ControllerNode(Node):
     def __init__(self):
         super().__init__('controller_node')
         self.get_logger().info("Controller Node Initialized")
-
+    
         # Shared message store
         self.shared_data = {"grasshopper_input": None, "printer_status": None, "image_manager_input": None}
         
@@ -31,6 +31,7 @@ class ControllerNode(Node):
 
         # Current State
         self.current_state = None
+
         self.is_paused = False
 
         # User Command Subscriber
@@ -69,7 +70,9 @@ class ControllerNode(Node):
         self.image_manager_sub = self.create_subscription(
             CompressedImage, '/image_input', self.image_manager_callback, 10)
 
-
+        # Debug flag
+        self.is_debug_active = False
+        
         # Start the input listener thread
         self.listen_for_input()
 
@@ -123,6 +126,8 @@ class ControllerNode(Node):
             self.start()
         elif command == 'pause':
             self.pause()
+        elif command == 'debug':
+            self.toggle_debug_mode()  # Toggle debug mode
         elif command.startswith('goto '):
             target_state_name = command.split(' ', 1)[1].upper()
             self.goto_state(target_state_name)
@@ -264,6 +269,12 @@ class ControllerNode(Node):
         self.publish_status()
         self.publish_none_stage()
 
+    def toggle_debug_mode(self):
+        """Toggle the debug mode and log the current status."""
+        self.is_debug_active = not self.is_debug_active
+        status = "enabled" if self.is_debug_active else "disabled"
+        self.get_logger().info(f"Debug mode {status}.")
+
     def listen_for_input(self):
         """Listen for user input in the terminal and handle commands."""
         def input_thread():
@@ -276,6 +287,8 @@ class ControllerNode(Node):
                     self.goto_state(target_state_name)
                 elif user_input == "pause":
                     self.pause()
+                elif user_input == "debug":
+                    self.toggle_debug_mode()  # Toggle debug mode
                 else:
                     self.get_logger().info(f"Unknown command: {user_input}")
 
